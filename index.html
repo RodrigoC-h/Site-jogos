@@ -35,12 +35,11 @@
             <div class="filtros-bar">
                 <h2>Catálogo de Jogos</h2>               
                 <div class="controles-wrapper">
-                    <select id="filtroGenero" onchange="renderizarJogos()">
-                        <option value="todos">Todos os Géneros</option>
-                        <option value="Ação">Ação</option>
-                        <option value="RPG">RPG</option>
-                        <option value="Aventura">Aventura</option>
-                        <option value="Estratégia">Estratégia</option>
+                    <select id="filtroGenero" onchange="irParaGenero(this.value)">
+                        <option value="">Selecionar Género</option>
+                        <option value="rpg.html">RPG</option>
+                        <option value="acao.html">Ação</option>
+                        <option value="estrategia.html">Estratégia</option>
                     </select>
                     <button class="btn-goty" onclick="mudarParaGoty()">
                         Vencedores GOTY
@@ -60,7 +59,7 @@
                         <button>Ver Detalhes</button>
                     </div>
                     <div class="card-jogo">
-                        <h3>Clair Obscur: Expedition 33</h3>
+                        <h3>Expedition 33</h3>
                         <button>Ver detalhes</button>
                     </div>
                      <div class="card-jogo">
@@ -81,6 +80,6 @@
             <button id="btnFecharModal2">Fechar</button>
         </div>
     </div>
-    <script src="JS/index.js"></script>
+    <script src="JS/géneros.js"></script>
 </body>
 </html>

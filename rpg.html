@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>GameForge | RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/generos.css">
+  <link rel="stylesheet" href="CSS/rpg.css">
+</head>
+
+<body data-genero="rpg">
+  <header>
+    <div class="header-main">
+      <div class="container-flex">
+        <a href="index.html" style="text-decoration:none;">
+          <h1 class="logo">GAME<span>FORGE</span></h1>
+        </a>
+        <div class="header-right">
+          <a href="login.html" class="btn-login-header">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-categorias">
+      <div class="container-flex">
+        <ul>
+          <li><a href="rpg.html" class="active">RPG</a></li>
+          <li><a href="acao.html">Ação</a></li>
+          <li><a href="estrategia.html">Estratégia</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="quadro-principal">
+      <div class="filtros-bar">
+        <h2>RPG</h2>
+        <div class="controles-wrapper">
+          <a href="index.html" class="btn-login-header">Voltar ao Catálogo</a>
+        </div>
+      </div>
+
+      <div id="catalogo" class="grid-jogos"></div>
+    </div>
+  </main>
+  <div id="modalDetalhes" class="modal">
+    <div class="modal-content">
+      <span class="fechar" id="btnFecharModal">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <p id="modalGenero"></p>
+      <p id="modalDescricao"></p>
+      <p id="modalAno"></p>
+      <button id="btnFecharModal2">Fechar</button>
+    </div>
+  </div>
+
+  <script src="JS/géneros.js"></script>
+</body>
+</html>
