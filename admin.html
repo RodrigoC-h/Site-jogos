@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+    <main>
+        <div class="admin-container">
+            <h1>Painel do Administrador</h1>
+
+            <form id="formulario">
+                <label>Nome do Jogo:</label>
+                <input type="text" id="nomejogo" required>
+
+                <label>Género:</label>
+                <input type="text" id="genero" required>
+
+                <label>Descrição:</label>
+                <textarea id="descricao" rows="3" required></textarea>
+
+                <label>Avaliação (0-5)☆:</label>
+                <input type="number" id="avaliacao" min="0" max="5" required>
+
+                <button type="submit" id="GuardarJogo">Guardar Jogo</button>
+
+                <p id="mensagem" class="sucesso"></p>
+
+            </form>
+        </div>
+    </main>
+    <p>a</p>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
