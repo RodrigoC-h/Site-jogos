@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Caixa do formulário de login */
+.login-form {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* Título do login */
+h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #ffdd59;
+}
+
+/* Campos de input */
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+/* Botão de login */
+button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffdd59;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Efeito hover no botão */
+button:hover {
+  background-color: #ffd700;
+}
+
+/* Mensagem de erro ou alertas pode aparecer em vermelho */
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-size: 14px;
+}

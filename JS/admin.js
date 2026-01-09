@@ -13,6 +13,11 @@ form.addEventListener("submit", function (e) {
         descricao: document.getElementById("descricao").value,
         avaliacao: parseFloat(document.getElementById("avaliacao").value)
     };
+    let catalogo = JSON.parse(localStorage.getItem("jogos")) || [];
+    catalogo.push(jogo);
+    localStorage.setItem("jogos", JSON.stringify(catalogo));
+    mensagem.textContent = "Jogo adicionado com sucesso!";
+    form.reset();
 });
 
     
