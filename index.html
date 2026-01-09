@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameStore | Catálogo de Jogos</title>
     <link rel="stylesheet" href="CSS/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="header-main">
             <div class="container-flex">
                 <a href="index.html" style="text-decoration: none;">
                     <h1 class="logo">GAME<span>FORGE</span></h1>
                 </a>
-                
                 <div class="header-right">
                     <a href="login.html" class="btn-login-header">
                         Login
@@ -23,27 +20,20 @@
                 </div>
             </div>
         </div>
-
         <nav class="nav-categorias">
             <div class="container-flex">
                 <ul>
                     <li><a href="playstation.html">Playstation</a></li>
                     <li><a href="xbox.html">XBOX</a></li>
                     <li><a href="pc.html">PC</a></li>
-                    <li><a href="nintendo.html">Nintendo</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
     <main class="container">
-        
         <div class="quadro-principal">
-
             <div class="filtros-bar">
-                <h2>Catálogo de Jogos</h2>
-                
+                <h2>Catálogo de Jogos</h2>               
                 <div class="controles-wrapper">
                     <select id="filtroGenero" onchange="renderizarJogos()">
                         <option value="todos">Todos os Géneros</option>
@@ -52,16 +42,12 @@
                         <option value="Aventura">Aventura</option>
                         <option value="Estratégia">Estratégia</option>
                     </select>
-
                     <button class="btn-goty" onclick="mudarParaGoty()">
                         Vencedores GOTY
                     </button>
                 </div>
             </div>
-
-            <div id="catalogo" class="grid-jogos">
-                </div>
-
+            <div id="catalogo" class="grid-jogos"></div>
             <div class="seccao-sugestoes">
                 <h3>Sugestões para ti</h3>
                 <div class="grid-jogos">
@@ -73,25 +59,28 @@
                         <h3>Valorant</h3>
                         <button>Ver Detalhes</button>
                     </div>
+                    <div class="card-jogo">
+                        <h3>Clair Obscur: Expedition 33</h3>
+                        <button>Ver detalhes</button>
+                    </div>
+                     <div class="card-jogo">
+                        <h3>Elden Ring</h3>
+                        <button>Ver detalhes</button>
+                     </div>
                 </div>
             </div>
-
         </div>
-        </main>
-
-    <div id="modalDetalhe" class="modal">
+    </main>
+    <div id="modalDetalhes" class="modal">
         <div class="modal-content">
-            <span class="fechar" onclick="fecharModal()">&times;</span>
-            <div class="modal-body">
-                <h2 id="modalTitulo"></h2>
-                <span class="badge" id="modalGenero"></span>
-                <div class="rating" id="modalAvaliacao"></div>
-                <hr>
-                <p id="modalDescricao"></p>
-            </div>
+            <span class="fechar" id="btnFecharModal">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalGenero"></p>
+            <p id="modalDescricao"></p>
+            <p id="modalAno"></p>
+            <button id="btnFecharModal2">Fechar</button>
         </div>
     </div>
-
     <script src="JS/index.js"></script>
 </body>
 </html>

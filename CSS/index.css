@@ -27,7 +27,6 @@ header {
     padding-top: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
 .logo {
     font-size: 2rem;
     font-weight: bold;
@@ -51,7 +50,6 @@ header {
     color: #000;
 }
 
-/* Navegação */
 .nav-categorias {
     margin-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -75,11 +73,9 @@ header {
     border: 2px solid #ffdd59; 
     border-radius: 25px; 
     
-    /* Espaçamento */
     padding: 30px;
     margin-top: 20px;
     
-    /* Organização */
     display: flex;
     flex-direction: column;
     gap: 30px; 
