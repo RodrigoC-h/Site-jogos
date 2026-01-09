@@ -60,6 +60,12 @@ h3 {
 }
 input[type="text"],
 input[type="password"] {
+<<<<<<< HEAD
+=======
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+>>>>>>> 75f7dc70065e903b52455e09a81fd0d0afb3b6cc
   font-size: 16px;
 }
 
@@ -74,6 +80,14 @@ button:hover {
   background-color: #ffd700 !important;
 }
 
+<<<<<<< HEAD
 .container.vh-100 {
   padding-top: 80px;
+=======
+/* Mensagem de erro ou alertas pode aparecer em vermelho */
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-size: 14px;
+>>>>>>> 75f7dc70065e903b52455e09a81fd0d0afb3b6cc
 }
