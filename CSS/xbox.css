@@ -1,0 +1,237 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+.logo span { color: #ffdd59; }
+
+.btn-login-header {
+  background-color: transparent;
+  border: 2px solid #ffdd59;
+  color: #ffdd59;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-login-header:hover {
+  background-color: #ffdd59;
+  color: #000;
+}
+
+.nav-categorias {
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-categorias ul {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  flex-wrap: wrap;
+}
+.nav-categorias a {
+  color: #ddd;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.nav-categorias a:hover {
+  color: #ffdd59;
+  background-color: rgba(255, 221, 89, 0.12);
+}
+.nav-categorias a.active {
+  color: #000;
+  background-color: #ffdd59;
+}
+
+.quadro-principal {
+  background-color: rgba(45, 45, 45, 0.9);
+  border: 2px solid #ffdd59;
+  border-radius: 25px;
+  padding: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filtros-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+.filtros-bar h2 {
+  color: #ffdd59;
+  margin: 0;
+}
+
+.controles-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+}
+
+button, .btn-goty {
+  background-color: #ffdd59;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  transition: 0.2s;
+}
+button:hover, .btn-goty:hover {
+  background-color: #ffd700;
+  transform: scale(1.02);
+}
+
+.grid-jogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+.card-jogo {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s, border-color 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.card-jogo:hover {
+  transform: translateY(-5px);
+  border-color: #ffdd59;
+}
+
+.card-jogo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.card-jogo h3 {
+  margin: 10px 0;
+  color: #ffdd59;
+  font-size: 1.2rem;
+}
+.card-jogo p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0 0 15px 0;
+}
+.card-jogo button { width: 100%; }
+.seccao-sugestoes {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+}
+.seccao-sugestoes h3 {
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  padding: 20px;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom right, #2a2a2a, #1a1a1a);
+  border: 1px solid #ffdd59;
+  margin: 7vh auto;
+  padding: 30px;
+  width: min(650px, 92vw);
+  border-radius: 15px;
+  color: #fff;
+  position: relative;
+}
+
+.fechar {
+  color: #aaa;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.fechar:hover { color: #ffdd59; }
+#modalTitulo { color: #ffdd59; margin-top: 0; }
+
+@media (max-width: 700px) {
+  .logo { font-size: 1.6rem; }
+  .container { padding: 15px; }
+  .quadro-principal { padding: 20px; }
+  .filtros-bar { padding: 15px; }
+  .nav-categorias ul { gap: 10px; }
+  select, button { width: 100%; }
+  .controles-wrapper { width: 100%; }
+}
