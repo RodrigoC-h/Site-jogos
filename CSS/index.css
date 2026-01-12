@@ -8,6 +8,7 @@ body {
 
 a { text-decoration: none; }
 ul { list-style: none; padding: 0; margin: 0; }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,9 +24,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: black; 
     padding-top: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px black;
 }
 .logo {
     font-size: 2rem;
@@ -44,6 +45,7 @@ header {
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
+    text-decoration: none;
 }
 .btn-login-header:hover {
     background-color: #ffdd59;
@@ -52,7 +54,7 @@ header {
 
 .nav-categorias {
     margin-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #ffffff1a;
 }
 .nav-categorias ul {
     display: flex;
@@ -69,7 +71,7 @@ header {
 }
 
 .quadro-principal {
-    background-color: rgba(45, 45, 45, 0.9); 
+    background-color: #2d2d2de6; 
     border: 2px solid #ffdd59; 
     border-radius: 25px; 
     
@@ -86,7 +88,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: #00000080; 
     padding: 20px;
     border-radius: 15px; 
 }
@@ -133,13 +135,13 @@ button:hover, .btn-goty:hover {
 }
 
 .card-jogo {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #00000099;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px #0000004d;
     transition: transform 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff1a;
 }
 
 .card-jogo:hover {
@@ -169,7 +171,7 @@ button:hover, .btn-goty:hover {
     width: 100%;
 }
 .seccao-sugestoes {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid #ffffff33;
     padding-top: 20px;
 }
 .seccao-sugestoes h3 {
@@ -186,7 +188,7 @@ button:hover, .btn-goty:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #000000cc;
 }
 
 .modal-content {
