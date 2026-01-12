@@ -20,9 +20,15 @@
             <form id="formulario">
                 <label>Nome do Jogo:</label>
                 <input type="text" id="nomejogo" required>
-
+                
                 <label>Género:</label>
-                <input type="text" id="genero" required>
+                <select id="filtroGenero" onchange="irParaGenero(this.value)">
+                        <option value="" disabled selected>Selecione um género</option>
+                        <option value="rpg.html">RPG</option>
+                        <option value="acao.html">Ação</option>
+                        <option value="estrategia.html">Estratégia</option>
+                        
+                    </select>
 
                 <label>Descrição:</label>
                 <textarea id="descricao" rows="3" required></textarea>
