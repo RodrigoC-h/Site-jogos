@@ -12,10 +12,19 @@ body {
 
 /* Botão de voltar */
 .btn-voltar {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+    background-color: transparent;
+    border: 2px solid #ffdd59;
+    color: #ffdd59;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
+.btn-voltar:hover {
+    background-color: #ffdd59;
+    color: #000;
+}
+
 
 /* Caixa do painel admin */
 .admin-container {
