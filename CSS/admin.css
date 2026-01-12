@@ -10,6 +10,22 @@ body {
   color: #fff;
 }
 
+/* Botão de voltar */
+.btn-voltar {
+    background-color: transparent;
+    border: 2px solid #ffdd59;
+    color: #ffdd59;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-voltar:hover {
+    background-color: #ffdd59;
+    color: #000;
+}
+
+
 /* Caixa do painel admin */
 .admin-container {
   background-color: rgba(0, 0, 0, 0.75);
@@ -71,7 +87,7 @@ body {
 }
 
 /* Mensagem de sucesso */
-.success {
+.successo {
   color: #4dff4d;
   margin-top: 10px;
   font-size: 14px;
