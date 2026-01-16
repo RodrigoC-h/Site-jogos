@@ -35,13 +35,21 @@
         <div class="quadro-principal">
             <div class="filtros-bar">
                 <h2>Catálogo de Jogos</h2>
+
                 <div class="controles-wrapper">
+                    <input 
+                        type="text" 
+                        id="pesquisaJogos" 
+                        placeholder="Pesquisar jogos..."
+                    >
+
                     <select id="filtroGenero">
                         <option value="">Selecionar Género</option>
                         <option value="rpg.html">RPG</option>
                         <option value="acao.html">Ação</option>
                         <option value="estrategia.html">Estratégia</option>
                     </select>
+
                     <button class="btn-goty" onclick="mudarParaGoty()">
                         Vencedores GOTY
                     </button>
@@ -78,10 +86,22 @@
                         <button type="button">Ver detalhes</button>
                     </div>
 
+                    <div class="card-jogo" data-id="The_witcher">
+                        <img src="IMG/Thewitcher.jpeg" alt="The Witcher">
+                        <h3>The Witcher</h3>
+                        <button type="button">Ver detalhes</button>
+                    </div>
+                     <div class="card-jogo" data-id="cyberpunk">
+                        <img src="IMG/cyberpunk.jpeg" alt="Cyberpunk 2077">
+                        <h3>Cyberpunk 2077</h3>
+                        <button type="button">Ver detalhes</button>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
+
     <div id="modalDetalhes" class="modal">
         <div class="modal-content">
             <h2 id="modalTitulo"></h2>
@@ -91,9 +111,11 @@
             <button id="btnFecharModal2" type="button">Fechar</button>
         </div>
     </div>
+
     <script src="JS/generos.js"></script>
     <script src="JS/index.js"></script>
 </body>
+
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -115,4 +137,3 @@
     </div>
 </footer>
 </html>
-

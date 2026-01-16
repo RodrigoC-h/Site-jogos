@@ -29,7 +29,23 @@ const catalogoJogos = [
         genero: "RPG",
         descricao: "Elden Ring é um RPG de ação em terceira pessoa num mundo aberto de fantasia sombria, conhecido pela dificuldade elevada e exploração extremamente livre das Terras Intermédias.",
         ano: 2022,
-        imagem: ""
+        imagem: "IMG/Elden_ring_img.jpeg"
+    }
+    {
+        id: "The_witcher",
+        titulo: "The Witcher",
+        genero: "RPG",
+        descricao: "The Witcher 3 é um RPG de ação em terceira pessoa passado num mundo de fantasia sombria inspirado em folclore eslavo, onde controlas Geralt de Rivia, um caçador de monstros à procura da filha adotiva, Ciri.",
+        ano: 2015,
+        imagem: "IMG/Thewitcher.jpeg"
+    }
+    {
+        id: "cyberpunk",
+        titulo: "Cyberpunk 2077",
+        genero: "RPG",
+        descricao: "The Witcher 3 é um RPG de ação em terceira pessoa passado num mundo de fantasia sombria inspirado em folclore eslavo, onde controlas Geralt de Rivia, um caçador de monstros à procura da filha adotiva, Ciri.",
+        ano: 2020,
+        imagem: "IMG/Thewitcher.jpeg"
     }
 ];
 
@@ -38,8 +54,8 @@ const modalTitulo = document.getElementById("modalTitulo");
 const modalGenero = document.getElementById("modalGenero");
 const modalDescricao = document.getElementById("modalDescricao");
 const modalAno = document.getElementById("modalAno");
-const btnFecharX = document.getElementById("btnFecharModal");
 const btnFechar = document.getElementById("btnFecharModal2");
+const modalContent = document.querySelector(".modal-content");
 
 function abrirModal(id) {
     let jogoSelecionado = null;
@@ -51,9 +67,7 @@ function abrirModal(id) {
         }
     }
 
-    if (jogoSelecionado === null) {
-        return;
-    }
+    if (jogoSelecionado === null) return;
 
     modalTitulo.textContent = jogoSelecionado.titulo;
     modalGenero.textContent = "Género: " + jogoSelecionado.genero;
@@ -61,22 +75,51 @@ function abrirModal(id) {
     modalAno.textContent = "Ano: " + jogoSelecionado.ano;
     modal.style.display = "block";
 }
-
 const cards = document.querySelectorAll(".card-jogo");
+
 for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", function () {
-        const id = this.dataset.id;
-        abrirModal(id);
-    });
+    const btn = cards[i].querySelector("button");
+    if (btn) {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation(); // evita reabrir
+            const id = cards[i].dataset.id;
+            abrirModal(id);
+        });
+    }
 }
 
 function fecharModal() {
     modal.style.display = "none";
 }
 
-btnFecharX.addEventListener("click", fecharModal);
-btnFechar.addEventListener("click", fecharModal);
+btnFechar.addEventListener("click", function (e) {
+    e.stopPropagation();
+    fecharModal();
+});
 
 modal.addEventListener("click", function (e) {
     if (e.target === modal) fecharModal();
 });
+
+modalContent.addEventListener("click", function (e) {
+    e.stopPropagation();
+});
+const inputPesquisa = document.getElementById("pesquisaJogos");
+
+if (inputPesquisa) {
+    inputPesquisa.addEventListener("input", function () {
+        const texto = inputPesquisa.value.toLowerCase().trim();
+        for (let i = 0; i < cards.length; i++) {
+            const titulo = cards[i]
+                .querySelector("h3")
+                .textContent
+                .toLowerCase();
+
+            if (titulo.includes(texto)) {
+                cards[i].style.display = "flex"; 
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    });
+}
