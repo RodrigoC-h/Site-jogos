@@ -14,9 +14,9 @@
                     <h1 class="logo">GAME<span>FORGE</span></h1>
                 </a>
                 <div class="header-right">
-                    <a href="login.html" class="btn-login-header">
-                        Login
-                    </a>
+                    <button class="btn-login-header" onclick="abrirLogin()">
+                         Login
+                    </button>
                 </div>
             </div>
         </div>
@@ -112,6 +112,22 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Login</h2>
+
+            <input type="text" id="user" placeholder="Utilizador">
+            <input type="password" id="pass" placeholder="Password">
+
+            <button onclick="login()">Entrar</button>
+            <button onclick="fecharLogin()">Cancelar</button>
+        </div>
+    </div>
+    
+>>>>>>> 59e62b29f20e9a535708c7c4c0897d78fd99efa0
     <script src="JS/generos.js"></script>
     <script src="JS/index.js"></script>
 </body>
