@@ -14,6 +14,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     margin: 0 auto;
     padding: 20px;
 }
+
 .container-flex {
     display: flex;
     justify-content: space-between;
@@ -24,19 +25,18 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 header {
-    background-color: #ffffff1a; 
+    background-color: #ffffff1a;
     padding-top: 15px;
     box-shadow: 0 4px 8px black;
     border-radius: 20px;
 }
+
 .logo {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
 }
-.logo span {
-    color: #ffdd59;
-}
+.logo span { color: #ffdd59; }
 
 .btn-login-header {
     background-color: transparent;
@@ -61,27 +61,32 @@ header {
     display: flex;
     gap: 20px;
     padding: 15px 0;
+    flex-wrap: wrap;
 }
 .nav-categorias a {
     color: #ddd;
     font-weight: bold;
     transition: 0.3s;
 }
-.nav-categorias a:hover {
+.nav-categorias a:hover { color: #ffdd59; }
+
+/* realce do link ativo */
+.nav-categorias a.active {
     color: #ffdd59;
+    border-bottom: 2px solid #ffdd59;
+    padding-bottom: 4px;
 }
 
 .quadro-principal {
-    background-color: #2d2d2de6; 
-    border: 2px solid #ffdd59; 
-    border-radius: 25px; 
-    
+    background-color: #2d2d2de6;
+    border: 2px solid #ffdd59;
+    border-radius: 25px;
     padding: 30px;
     margin-top: 20px;
-    
+
     display: flex;
     flex-direction: column;
-    gap: 30px; 
+    gap: 30px;
 }
 
 .filtros-bar {
@@ -89,13 +94,14 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #00000080; 
+    background-color: #00000080;
     padding: 20px;
-    border-radius: 15px; 
+    border-radius: 15px;
+    gap: 15px;
 }
 
 .filtros-bar h2 {
-    color: #ffdd59; 
+    color: #ffdd59;
     margin: 0;
 }
 
@@ -103,32 +109,9 @@ header {
     display: flex;
     gap: 15px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-select {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    background-color: #fff;
-    color: #333;
-}
-button, .btn-goty {
-    background-color: #ffdd59;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: 0.3s;
-}
-
-button:hover, .btn-goty:hover {
-    background-color: #ffd700;
-    transform: scale(1.02);
-}
 .grid-jogos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -143,10 +126,7 @@ button:hover, .btn-goty:hover {
     box-shadow: 0 4px 8px #0000004d;
     transition: transform 0.3s;
     border: 1px solid #ffffff1a;
-    display: flex;              
-    flex-direction: column;     
 }
-
 
 .card-jogo:hover {
     transform: translateY(-5px);
@@ -160,31 +140,37 @@ button:hover, .btn-goty:hover {
     border-radius: 10px;
     margin-bottom: 15px;
 }
+
 .card-jogo h3 {
     margin: 10px 0;
     color: #ffdd59;
     font-size: 1.2rem;
 }
+
 .card-jogo p {
     color: #ccc;
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
-.card-jogo button {
-    width: 100%;
-    margin-top: auto;  
+button {
+    background-color: #ffdd59;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
 }
 
-.seccao-sugestoes {
-    border-top: 1px solid #ffffff33;
-    padding-top: 20px;
+button:hover {
+    background-color: #ffd700;
+    transform: scale(1.02);
 }
-.seccao-sugestoes h3 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
+
+.card-jogo button { width: 100%; }
 
 .modal {
     display: none;
@@ -209,105 +195,19 @@ button:hover, .btn-goty:hover {
     position: relative;
 }
 
-.fechar {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.fechar:hover { color: #ffdd59; }
-
 #modalTitulo { color: #ffdd59; }
 
-.footer {
-    margin-top: 40px;
-    background: linear-gradient(to right, #1a1a1a, #111);
-    border-top: 2px solid #ffdd59;
-    color: #ddd;
-    padding: 40px 20px 20px;
-}
+/* se não queres a cruz, deixa escondida */
+.fechar { display: none; }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
-
-.footer-col h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.footer-col h3 span {
-    color: #ffdd59;
-}
-
-.footer-col h4 {
-    color: #ffdd59;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: end;
-}
-
-.footer-col p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #ccc;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
-.footer-col ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: #ffdd59;
-    padding-left: 5px;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    display: flex;
-    justify-content: end;
-}
-
-.social-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    display: flex;
-    justify-content: end;
-}
-
-.social-links a:hover {
-    color: #ffdd59;
-    transform: translateX(5px);
-    display: flex;
-    justify-content: end;
-}
-
-.footer-bottom {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #ffffff33;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+    .container-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }

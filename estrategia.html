@@ -2,14 +2,11 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>GameForge | Ação</title>
+  <title>GameForge | Estratégia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/generos.css">
-  <link rel="stylesheet" href="CSS/acao.css">
+  <link rel="stylesheet" href="CSS/estrategia.css">
 </head>
-
-<body data-genero="acao">
-
+<body data-genero="estrategia">
   <header>
     <div class="header-main">
       <div class="container-flex">
@@ -21,13 +18,12 @@
         </div>
       </div>
     </div>
-
     <nav class="nav-categorias">
       <div class="container-flex">
         <ul>
           <li><a href="rpg.html">RPG</a></li>
-          <li><a href="acao.html" class="active">Ação</a></li>
-          <li><a href="estrategia.html">Estratégia</a></li>
+          <li><a href="acao.html">Ação</a></li>
+          <li><a href="estrategia.html" class="active">Estratégia</a></li>
         </ul>
       </div>
     </nav>
@@ -36,20 +32,15 @@
   <main class="container">
     <div class="quadro-principal">
       <div class="filtros-bar">
-        <h2>Ação</h2>
-        <div class="controles-wrapper">
-          <a href="index.html" class="btn-login-header">Voltar ao Catálogo</a>
-        </div>
+        <h2>Estratégia</h2>
+        <div class="controles-wrapper"></div>
       </div>
-
       <div id="catalogo" class="grid-jogos"></div>
     </div>
   </main>
 
-  <!-- MODAL -->
   <div id="modalDetalhes" class="modal">
     <div class="modal-content">
-      <span class="fechar" id="btnFecharModal">&times;</span>
       <h2 id="modalTitulo"></h2>
       <p id="modalGenero"></p>
       <p id="modalDescricao"></p>
@@ -57,7 +48,6 @@
       <button id="btnFecharModal2">Fechar</button>
     </div>
   </div>
-
   <script src="JS/generos.js"></script>
 </body>
 </html>
