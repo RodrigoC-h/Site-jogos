@@ -80,3 +80,24 @@ btnFechar.addEventListener("click", fecharModal);
 modal.addEventListener("click", function (e) {
     if (e.target === modal) fecharModal();
 });
+
+function abrirLogin() {
+    document.getElementById("loginModal").classList.remove("hidden");
+}
+
+function fecharLogin() {
+    document.getElementById("loginModal").classList.add("hidden");
+}
+
+function login() {
+    const username = document.getElementById("user").value;
+    const password = document.getElementById("pass").value;
+
+    if (username === "admin" && password === "1234") {
+        location.replace("admin.html");
+    } else if (username === "user" && password === "1234") {
+        location.replace("index_pos_login.html");
+    } else {
+        alert("Utilizador ou password incorretos!");
+    }
+}
