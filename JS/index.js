@@ -59,13 +59,10 @@ function abrirModal(id) {
     modalGenero.textContent = "Género: " + jogoSelecionado.genero;
     modalDescricao.textContent = jogoSelecionado.descricao;
     modalAno.textContent = "Ano: " + jogoSelecionado.ano;
-
-    // ✅ ESTA LINHA FALTAVA
     modal.style.display = "block";
 }
 
 const cards = document.querySelectorAll(".card-jogo");
-
 for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", function () {
         const id = this.dataset.id;
