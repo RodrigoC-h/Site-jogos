@@ -19,5 +19,3 @@ form.addEventListener("submit", function (e) {
     mensagem.textContent = "Jogo adicionado com sucesso!";
     form.reset();
 });
-
-    

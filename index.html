@@ -14,9 +14,9 @@
                     <h1 class="logo">GAME<span>FORGE</span></h1>
                 </a>
                 <div class="header-right">
-                    <a href="login.html" class="btn-login-header">
-                        Login
-                    </a>
+                    <button class="btn-login-header" onclick="abrirLogin()">
+                         Login
+                    </button>
                 </div>
             </div>
         </div>
@@ -35,13 +35,21 @@
         <div class="quadro-principal">
             <div class="filtros-bar">
                 <h2>Catálogo de Jogos</h2>
+
                 <div class="controles-wrapper">
+                    <input 
+                        type="text" 
+                        id="pesquisaJogos" 
+                        placeholder="Pesquisar jogos..."
+                    >
+
                     <select id="filtroGenero">
                         <option value="">Selecionar Género</option>
                         <option value="rpg.html">RPG</option>
                         <option value="acao.html">Ação</option>
                         <option value="estrategia.html">Estratégia</option>
                     </select>
+
                     <button class="btn-goty" onclick="mudarParaGoty()">
                         Vencedores GOTY
                     </button>
@@ -78,10 +86,22 @@
                         <button type="button">Ver detalhes</button>
                     </div>
 
+                    <div class="card-jogo" data-id="The_witcher">
+                        <img src="IMG/Thewitcher.jpeg" alt="The Witcher">
+                        <h3>The Witcher</h3>
+                        <button type="button">Ver detalhes</button>
+                    </div>
+                     <div class="card-jogo" data-id="cyberpunk">
+                        <img src="IMG/cyberpunk.jpeg" alt="Cyberpunk 2077">
+                        <h3>Cyberpunk 2077</h3>
+                        <button type="button">Ver detalhes</button>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
+
     <div id="modalDetalhes" class="modal">
         <div class="modal-content">
             <h2 id="modalTitulo"></h2>
@@ -91,9 +111,27 @@
             <button id="btnFecharModal2" type="button">Fechar</button>
         </div>
     </div>
+
+<<<<<<< HEAD
+=======
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Login</h2>
+
+            <input type="text" id="user" placeholder="Utilizador">
+            <input type="password" id="pass" placeholder="Password">
+
+            <button onclick="login()">Entrar</button>
+            <button onclick="fecharLogin()">Cancelar</button>
+        </div>
+    </div>
+    
+>>>>>>> 59e62b29f20e9a535708c7c4c0897d78fd99efa0
     <script src="JS/generos.js"></script>
     <script src="JS/index.js"></script>
 </body>
+
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -115,4 +153,3 @@
     </div>
 </footer>
 </html>
-
