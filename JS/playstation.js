@@ -5,7 +5,7 @@ const catalogoJogos = [
         genereo: "Ação/Aventura",
         descricao: "God of War: Ragnarok é um jogo de ação e aventura em terceira pessoa que continua a história de Kratos e seu filho Atreus enquanto enfrentam os desafios do Ragnarok na mitologia nórdica.",
         ano: 2022,
-        imagem: "https://upload.wikimedia.org/wikipedia/pt/a/a5/God_of_War_Ragnar%C3%B6k_capa.jpg"
+        imagem: "IMG/Kratos_.jpeg"
     },
     {
         id: "blackmyth",
@@ -13,7 +13,7 @@ const catalogoJogos = [
         genero: "Ação/RPG",
         descricao: "Black Myth: Wukong é um jogo de ação e RPG baseado na clássica lenda chinesa Jornada ao Oeste, onde os jogadores controlam o Rei Macaco em sua jornada cheia de combates intensos e exploração.",
         ano: 2024,
-        imagem: "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg"
+        imagem: "IMG/WUKONG WALLPAPER 4K.jpg"
     },
     {
         id: "ghostofyotei",
@@ -21,7 +21,7 @@ const catalogoJogos = [
         genero: "Ação/Aventura",
         descricao: "Ghost of Yotei é um jogo de ação e aventura em mundo aberto ambientado no Japão feudal, onde os jogadores exploram uma ilha misteriosa cheia de segredos e perigos sobrenaturais.",
         ano: 2023,
-        imagem: "https://m.media-amazon.com/images/M/MV5BODA2YzRkODktNTIwYi00ZDk1LThlMTAtYzE4MGEyODM4NzZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        imagem: "IMG/Ghost_yot.jpeg"
     },
     {
         id: "horizonzero",
@@ -29,7 +29,15 @@ const catalogoJogos = [
         genero: "Ação/RPG",
         descricao: "Horizon Zero Dawn Remastered é uma versão aprimorada do aclamado jogo de ação e RPG, onde os jogadores assumem o papel de Aloy, uma caçadora em um mundo pós-apocalíptico dominado por máquinas.",
         ano: 2021,
-        imagem: "https://image.api.playstation.com/vulcan/ap/rnd/202409/2716/16b33fa9a5c7285ba86a035b4a1c5f8eb430b407eae35ffd.png"
+        imagem: "IMG/Hzd ✖️.jpg"
+    },
+    {
+        id: "gt7",
+        titulo: "Gran Turismo 7",
+        genero: "Corrida",
+        descricao: "Gran Turismo 7 é um simulador de corrida que oferece uma experiência realista de direção, com uma vasta seleção de carros e pistas, além de modos de jogo variados para os entusiastas do automobilismo.",
+        ano: 2022,
+        imagem: "IMG/Gran Turismo 7.jpg"
     },
     {
         id: "deathstranding",
@@ -37,13 +45,24 @@ const catalogoJogos = [
         genero: "Ação",
         descricao: "Death Stranding 2 é a sequência do inovador jogo de ação e aventura, onde os jogadores exploram um mundo fragmentado e conectam comunidades isoladas enquanto enfrentam ameaças sobrenaturais.",
         ano: 2024,
-        imagem: "" 
+        imagem: "IMG/KOM (@the_art_cut_off) on X.jpeg" 
     },
     {
         id: "tlou1",
         titulo: "The Last Of Us Part I",
-        genero: ""
-    }
+        genero: "Ação/Aventura",
+        descricao: "The Last Of Us Part I é um remake do aclamado jogo de ação e aventura, onde os jogadores acompanham a jornada de Joel e Ellie em um mundo pós-apocalíptico repleto de perigos e emoções intensas.",
+        ano: 2022,
+        imagem: ""
+    },
+    {
+        id: "astrobot",
+        titulo: "Astro Bot",
+        genero: "Plataforma",
+        descricao: "Astro Bot é um jogo de plataforma em realidade virtual onde os jogadores controlam um pequeno robô em uma aventura cheia de desafios criativos e ambientes vibrantes.",
+        ano: 2024,
+        imagem: "IMG/Astrobot.jpeg"
+    },
     
     
 ]
