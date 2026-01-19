@@ -29,8 +29,29 @@ const catalogoJogos = [
         genero: "RPG",
         descricao: "Elden Ring é um RPG de ação em terceira pessoa num mundo aberto de fantasia sombria, conhecido pela dificuldade elevada e exploração extremamente livre das Terras Intermédias.",
         ano: 2022,
+<<<<<<< HEAD
         imagem: ""
     },
+=======
+        imagem: "IMG/Elden_ring_img.jpeg"
+    },
+    {
+        id: "The_witcher",
+        titulo: "The Witcher",
+        genero: "RPG",
+        descricao: "The Witcher 3 é um RPG de ação em terceira pessoa passado num mundo de fantasia sombria inspirado em folclore eslavo, onde controlas Geralt de Rivia, um caçador de monstros à procura da filha adotiva, Ciri.",
+        ano: 2015,
+        imagem: "IMG/Thewitcher.jpeg"
+    },
+    {
+        id: "cyberpunk",
+        titulo: "Cyberpunk 2077",
+        genero: "RPG",
+        descricao: "The Witcher 3 é um RPG de ação em terceira pessoa passado num mundo de fantasia sombria inspirado em folclore eslavo, onde controlas Geralt de Rivia, um caçador de monstros à procura da filha adotiva, Ciri.",
+        ano: 2020,
+        imagem: "IMG/Thewitcher.jpeg"
+    }
+>>>>>>> 8120e5e (Mudança teste)
 ];
 
 const modal = document.getElementById("modalDetalhes");
@@ -66,10 +87,21 @@ function abrirModal(id) {
 const cards = document.querySelectorAll(".card-jogo");
 
 for (let i = 0; i < cards.length; i++) {
+<<<<<<< HEAD
     cards[i].addEventListener("click", function () {
         const id = this.dataset.id;
         abrirModal(id);
     });
+=======
+    const btn = cards[i].querySelector("button");
+    if (btn) {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation(); 
+            const id = cards[i].dataset.id;
+            abrirModal(id);
+        });
+    }
+>>>>>>> 8120e5e (Mudança teste)
 }
 
 function fecharModal() {
