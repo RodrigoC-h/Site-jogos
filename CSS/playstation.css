@@ -357,39 +357,12 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   .quadro-principal { padding: 20px; }
   .filtros-bar { padding: 15px; }
   .nav-categorias ul { gap: 10px; }
-  select, button { width: 100%; }
-  .controles-wrapper { width: 100%; }
-}
-/* Navbar */
-.nav-categorias ul {
-  display: flex;
-  gap: 20px;
-  padding: 15px 0;
-  flex-wrap: wrap;
-  align-items: center;              /* <— isto ajuda no alinhamento vertical */
-}
 
-.nav-categorias a {
-  color: #ddd;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.2s;
+  button, select {
+    width: 100%;
+  }
 
-  display: inline-flex;             /* <— chave: deixa de ser inline "baseline" */
-  align-items: center;              /* <— centra o texto verticalmente */
-  justify-content: center;
-  min-height: 36px;                 /* <— garante altura consistente */
-  line-height: 1;                   /* <— evita diferenças de baseline */
-}
-
-.nav-categorias a:hover {
-  color: #ffdd59;
-  background-color: rgba(255, 221, 89, 0.12);
-}
-
-/* Estado ativo */
-.nav-categorias a.active {
-  color: #000;
-  background-color: #ffdd59;
+  .controles-wrapper {
+    width: 100%;
+  }
 }
