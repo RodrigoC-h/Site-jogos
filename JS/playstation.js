@@ -66,6 +66,21 @@ const catalogoJogos = [
     
     
 ]
+const lista = document.getElementById("listaJogos");
+
+catalogoJogos.forEach(jogo => {
+    lista.innerHTML += `
+        <div style="margin-bottom:20px">
+            <h2>${jogo.titulo}</h2>
+            <p><strong>Género:</strong> ${jogo.genero || jogo.genereo}</p>
+            <p><strong>Ano:</strong> ${jogo.ano}</p>
+            <img src="${jogo.imagem}" width="200">
+            <p>${jogo.descricao}</p>
+            <hr>
+        </div>
+    `;
+});
+
 const modal = document.getElementById("modalDetalhes");
 const modalTitulo = document.getElementById("modalTitulo");
 const modalGenero = document.getElementById("modalGenero");

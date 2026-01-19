@@ -344,4 +344,22 @@ button:hover, .btn-goty:hover {
     font-size: 0.9rem;
     color: #aaa;
 }
+.btn-comprar-modal {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 
+    background-color: #ffdd59;
+    color: #000;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-comprar-modal:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}

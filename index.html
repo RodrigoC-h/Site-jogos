@@ -14,9 +14,9 @@
                     <h1 class="logo">GAME<span>FORGE</span></h1>
                 </a>
                 <div class="header-right">
-                    <a class="btn-login-header" href="login.html">
+                    <button class="btn-login-header" onclick="abrirLogin()">
                          Login
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -49,6 +49,7 @@
                         <option value="acao.html">Ação</option>
                         <option value="estrategia.html">Estratégia</option>
                     </select>
+
                     <button class="btn-goty" onclick="mudarParaGoty()">
                         Vencedores GOTY
                     </button>
@@ -103,13 +104,32 @@
 
     <div id="modalDetalhes" class="modal">
         <div class="modal-content">
-            <h2 id="modalTitulo"></h2>
-            <p id="modalGenero"></p>
-            <p id="modalDescricao"></p>
-            <p id="modalAno"></p>
-            <button id="btnFecharModal2" type="button">Fechar</button>
+    <h2 id="modalTitulo"></h2>
+    <p id="modalGenero"></p>
+    <p id="modalDescricao"></p>
+    <p id="modalAno"></p>
+    <button id="btnFecharModal2" type="button">Fechar</button>
+    <button id="btnComprar" class="btn-comprar-modal" type="button">
+        Comprar
+    </button>
+</div>
+    </div>
+<<<<<<< HEAD
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Login</h2>
+
+            <input type="text" id="user" placeholder="Utilizador">
+            <input type="password" id="pass" placeholder="Password">
+
+            <button onclick="login()">Entrar</button>
+            <button onclick="fecharLogin()">Cancelar</button>
         </div>
     </div>
+    
+=======
     
 <<<<<<< HEAD
     <footer class="footer">
@@ -132,17 +152,20 @@
             <p>© 2026 GameForge — Todos os direitos reservados</p>
         </div>
     </footer>
-
+>>>>>>> 3cf30c32a5982c18e37dfc2a62d3b1f2d032b9c5
     <script src="JS/generos.js"></script>
     <script src="JS/index.js"></script>
-    <script src="JS/login.js"></script>
 </body>
+<<<<<<< HEAD
 
+<footer class="footer">
+=======
 =======
 >>>>>>> 59e62b29f20e9a535708c7c4c0897d78fd99efa0
     <script src="JS/generos.js"></script>
     <script src="JS/index.js"></script>
-<footer class="footer">
+    <footer class="footer">
+>>>>>>> 3cf30c32a5982c18e37dfc2a62d3b1f2d032b9c5
     <div class="footer-container">
         <div class="footer-col">
             <h3>GAME<span>FORGE</span></h3>
@@ -162,6 +185,4 @@
         <p>© 2026 GameForge — Todos os direitos reservados</p>
     </div>
 </footer>
-</body>
->>>>>>> 8120e5e (Mudança teste)
 </html>
