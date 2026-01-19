@@ -58,7 +58,6 @@ h3 {
   color: #ffdd59;
   font-weight: bold;
 }
-
 input[type="text"],
 input[type="password"] {
   width: 90%;
@@ -73,9 +72,7 @@ button {
   font-weight: bold;
   border: none;
   transition: 0.3s;
-  margin-top: 10px;
 }
-
 button:hover {
   background-color: #ffd700 !important;
 }
