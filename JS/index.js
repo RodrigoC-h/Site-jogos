@@ -60,7 +60,6 @@ function abrirModal(id) {
     modalDescricao.textContent = jogoSelecionado.descricao;
     modalAno.textContent = "Ano: " + jogoSelecionado.ano;
 
-    // ✅ ESTA LINHA FALTAVA
     modal.style.display = "block";
 }
 
