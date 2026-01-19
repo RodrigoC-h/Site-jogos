@@ -29,10 +29,6 @@ const catalogoJogos = [
         genero: "RPG",
         descricao: "Elden Ring é um RPG de ação em terceira pessoa num mundo aberto de fantasia sombria, conhecido pela dificuldade elevada e exploração extremamente livre das Terras Intermédias.",
         ano: 2022,
-<<<<<<< HEAD
-        imagem: ""
-    },
-=======
         imagem: "IMG/Elden_ring_img.jpeg"
     },
     {
@@ -51,7 +47,6 @@ const catalogoJogos = [
         ano: 2020,
         imagem: "IMG/Thewitcher.jpeg"
     }
->>>>>>> 8120e5e (Mudança teste)
 ];
 
 const modal = document.getElementById("modalDetalhes");
@@ -87,12 +82,6 @@ function abrirModal(id) {
 const cards = document.querySelectorAll(".card-jogo");
 
 for (let i = 0; i < cards.length; i++) {
-<<<<<<< HEAD
-    cards[i].addEventListener("click", function () {
-        const id = this.dataset.id;
-        abrirModal(id);
-    });
-=======
     const btn = cards[i].querySelector("button");
     if (btn) {
         btn.addEventListener("click", function (e) {
@@ -101,7 +90,6 @@ for (let i = 0; i < cards.length; i++) {
             abrirModal(id);
         });
     }
->>>>>>> 8120e5e (Mudança teste)
 }
 
 function fecharModal() {
