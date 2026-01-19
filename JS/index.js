@@ -49,13 +49,8 @@ const catalogoJogos = [
         genero: "RPG",
         descricao: "Cyberpunk 2077 é um RPG de ação em mundo aberto num futuro distópico, onde jogas como V e exploras Night City, misturando narrativa, combate e escolhas com impacto.",
         ano: 2020,
-<<<<<<< HEAD
-        imagem: "IMG/Thewitcher.jpeg"
-    }
-=======
         imagem: "IMG/cyberpunk.jpeg"
     },
->>>>>>> 919255809940a95b3244580dcfc2714807cd98c7
 ];
 
 // ---------- Elementos do modal ----------
@@ -99,25 +94,12 @@ function abrirModal(id) {
     // Mostra o modal
     modal.style.display = "block";
 
-<<<<<<< HEAD
-const cards = document.querySelectorAll(".card-jogo");
-
-for (let i = 0; i < cards.length; i++) {
-    const btn = cards[i].querySelector("button");
-    if (btn) {
-        btn.addEventListener("click", function (e) {
-            e.stopPropagation(); 
-            const id = cards[i].dataset.id;
-            abrirModal(id);
-        });
-=======
     // Liga o botão comprar ao jogo aberto
     if (btnComprar) {
         btnComprar.onclick = function (e) {
             e.stopPropagation();
             alert("Comprar: " + jogoSelecionado.titulo);
         };
->>>>>>> 919255809940a95b3244580dcfc2714807cd98c7
     }
 }
 
