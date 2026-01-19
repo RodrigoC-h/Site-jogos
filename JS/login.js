@@ -1,4 +1,6 @@
-function login() {
+function login(event) {
+
+  event.preventDefault();
 
   const users = [
     { username: "admin", password: "1234" },
@@ -16,5 +18,7 @@ function login() {
   } else {
     alert("Utilizador ou password incorretos!");
   }
+
+  
 }
 
