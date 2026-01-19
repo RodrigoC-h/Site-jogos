@@ -56,6 +56,13 @@ const catalogoJogos = [
         imagem: "IMG/State of Decay 2 Free Download For PC.jpg",
     },
     {
-        
+        id: "starfield",
+        titulo: "Starfield",
+        genero: "RPG/Ciência-Ficção",
+        descricao: "Starfield é um RPG de ficção científica ambientado em um vasto universo aberto, onde os jogadores exploram planetas, constroem naves espaciais e embarcam em missões épicas enquanto desvendam os mistérios do cosmos.",
+        ano: 2023,
+        imagem: "IMG/Starfield 4K Wallpaper.jpg"
     }
+
 ]
+
