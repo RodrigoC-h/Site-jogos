@@ -20,27 +20,28 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 20px;
 }
 
+/* HEADER + NAV (efeito sanduíche, compacto) */
 .container-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 12px 20px; /* compacto */
   gap: 15px;
   flex-wrap: wrap;
 }
 
-/* HEADER (igual ao index: claro/transparente + cantos arredondados) */
 header {
-  background-color: #ffffff1a;
-  padding-top: 15px;
-  box-shadow: 0 4px 8px black;
+  background: linear-gradient(to right, #1a1a1a, #111);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
   border-radius: 20px;
+  border-bottom: 2px solid #ffdd59;
+  padding-top: 0;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   color: #fff;
   margin: 0;
@@ -60,6 +61,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 .btn-login-header:hover {
   background-color: #ffdd59;
   color: #000;
@@ -67,14 +69,14 @@ header {
 
 /* NAV */
 .nav-categorias {
-  margin-top: 15px;
-  border-top: 1px solid #ffffff1a;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 .nav-categorias ul {
   display: flex;
   gap: 20px;
-  padding: 15px 0;
+  padding: 12px 0;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -85,7 +87,6 @@ header {
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.2s;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +110,7 @@ header {
   cursor: default;
 }
 
-/* QUADRO PRINCIPAL (igual ao index) */
+/* QUADRO PRINCIPAL */
 .quadro-principal {
   background-color: #2d2d2de6;
   border: 2px solid #ffdd59;
@@ -170,26 +171,29 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   gap: 25px;
 }
 
-/* ✅ SCROLL (só onde metes class="scroll-jogos") */
+/* SCROLL (vertical) */
 .scroll-jogos {
-  max-height: 500px;      /* ajusta: 400/500/600 */
+  max-height: 500px;   /* ajusta: 400/500/600 */
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 10px;
 }
 
-/* Scrollbar */
-.scroll-jogos::-webkit-scrollbar {
-  width: 8px;
-}
-.scroll-jogos::-webkit-scrollbar-track {
-  background: transparent;
-}
+/* Scrollbar (Chrome/Edge/Safari) */
+.scroll-jogos::-webkit-scrollbar { width: 8px; }
+.scroll-jogos::-webkit-scrollbar-track { background: transparent; }
 .scroll-jogos::-webkit-scrollbar-thumb {
   background-color: #ffdd59;
   border-radius: 10px;
 }
 
-/* CARTÕES (igual ao index) */
+/* Scrollbar (Firefox) */
+.scroll-jogos {
+  scrollbar-width: thin;
+  scrollbar-color: #ffdd59 transparent;
+}
+
+/* CARTÕES */
 .card-jogo,
 .jogo.card {
   background-color: #00000099;
@@ -234,7 +238,7 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   margin: 0 0 15px 0;
 }
 
-/* corpo do card (para o botão ficar sempre em baixo) */
+/* corpo do card (botão sempre em baixo) */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -246,7 +250,7 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   margin-top: auto;
 }
 
-/* MODAL (caso uses noutras páginas) */
+/* MODAL (se usares) */
 .modal {
   display: none;
   position: fixed;
@@ -277,11 +281,12 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   font-weight: bold;
   cursor: pointer;
 }
+
 .fechar:hover { color: #ffdd59; }
 
 #modalTitulo { color: #ffdd59; margin-top: 0; }
 
-/* FOOTER (igual ao index) */
+/* FOOTER */
 .footer {
   margin-top: 40px;
   background: linear-gradient(to right, #1a1a1a, #111);
@@ -357,12 +362,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   .quadro-principal { padding: 20px; }
   .filtros-bar { padding: 15px; }
   .nav-categorias ul { gap: 10px; }
-
-  button, select {
-    width: 100%;
-  }
-
-  .controles-wrapper {
-    width: 100%;
-  }
+  select, button { width: 100%; }
+  .controles-wrapper { width: 100%; }
 }

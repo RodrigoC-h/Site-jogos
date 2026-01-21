@@ -1,6 +1,5 @@
 let jogoAtual = null;
 
-// Catálogo base de jogos
 let catalogoJogos = [
     {
         id: "minecraft",
@@ -43,18 +42,37 @@ let catalogoJogos = [
         genero: "RPG/Ação",
         descricao: "Explora Night City num futuro distópico dominado por tecnologia e poder.",
         ano: 2020
+    },
+    {
+        id: "civilization",
+        titulo: "Civilization VI",
+        genero: "Estratégia",
+        descricao: "Constrói uma civilização desde a antiguidade até ao futuro e domina o mundo pela diplomacia, ciência ou guerra.",
+        ano: 2016
+    },
+    {
+        id: "age_empires",
+        titulo: "Age of Empires IV",
+        genero: "Estratégia",
+        descricao: "Um clássico jogo de estratégia em tempo real com civilizações históricas e batalhas épicas.",
+        ano: 2021
+    },
+    {
+        id: "starcraft",
+        titulo: "StarCraft II",
+        genero: "Estratégia",
+        descricao: "Estratégia em tempo real num universo de ficção científica com três raças em guerra.",
+        ano: 2010
     }
 ];
 
-// Liga apenas os botões "Ver detalhes"
-document.querySelectorAll(".card-jogo").forEach(card => {
-    const btn = card.querySelector("button");
-    if (btn) {
-        btn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            abrirModal(card.dataset.id);
-        });
-    }
+
+document.querySelectorAll(".card-jogo .btn-detalhes").forEach(botao => {
+    botao.addEventListener("click", function () {
+        const card = this.closest(".card-jogo");
+        if (!card) return;
+        abrirModal(card.dataset.id);
+    });
 });
 
 function abrirModal(id) {
@@ -71,29 +89,48 @@ function abrirModal(id) {
     document.getElementById("modalDetalhes").classList.add("ativo");
 }
 
-
 function fecharModal() {
     document.getElementById("modalDetalhes").classList.remove("ativo");
 }
 
-// Pesquisa
+// ---------------------------
+// PESQUISA + FILTRO GÉNERO
+// ---------------------------
 const inputPesquisa = document.getElementById("pesquisaJogos");
-if (inputPesquisa) {
-    inputPesquisa.addEventListener("input", function () {
-        const termo = this.value.toLowerCase();
-        document.querySelectorAll(".card-jogo").forEach(card => {
-            const titulo = card.querySelector("h3").textContent.toLowerCase();
-            card.style.display = titulo.includes(termo) ? "block" : "none";
-        });
+const filtroGenero = document.getElementById("filtroGenero");
+
+function aplicarFiltros() {
+    const termo = (inputPesquisa?.value || "").toLowerCase().trim();
+    const generoSel = (filtroGenero?.value || "todos").toLowerCase();
+
+    document.querySelectorAll(".card-jogo").forEach(card => {
+        const id = card.dataset.id;
+        const jogo = catalogoJogos.find(j => j.id === id);
+
+        // fallback seguro
+        const titulo = (jogo ? jogo.titulo : card.querySelector("h3")?.textContent || "").toLowerCase();
+        const genero = (jogo ? jogo.genero : "").toLowerCase();
+
+        const okTitulo = titulo.includes(termo);
+        const okGenero = (generoSel === "todos") ? true : genero.includes(generoSel);
+
+        // ✅ mantém layout (cards são flex)
+        card.style.display = (okTitulo && okGenero) ? "flex" : "none";
     });
 }
 
-const btnComprar = document.getElementById("btnComprar");
+if (inputPesquisa) inputPesquisa.addEventListener("input", aplicarFiltros);
+if (filtroGenero) filtroGenero.addEventListener("change", aplicarFiltros);
 
+// Aplica logo no arranque (caso haja valor predefinido)
+aplicarFiltros();
+
+// ---------------------------
+// COMPRAR
+// ---------------------------
+const btnComprar = document.getElementById("btnComprar");
 if (btnComprar) {
     btnComprar.addEventListener("click", function () {
-        if (jogoAtual) {
-            alert("Comprado: " + jogoAtual.titulo);
-        }
+        if (jogoAtual) alert("Comprado: " + jogoAtual.titulo);
     });
 }

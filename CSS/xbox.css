@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-/* xbox.css (com quadro + barra + scroll vertical) */
-
 /* Reset básico */
-=======
->>>>>>> 417e0b95232bf0d5cd3ed8f8e862f5f47500675e
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
@@ -25,31 +20,33 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 20px;
 }
 
+/* HEADER + NAV (efeito sanduíche, compacto) */
 .container-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 12px 20px; /* compacto */
   gap: 15px;
   flex-wrap: wrap;
 }
 
-/* HEADER */
 header {
-  background-color: #ffffff1a;
-  padding-top: 15px;
-  box-shadow: 0 4px 8px black;
+  background: linear-gradient(to right, #1a1a1a, #111);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
   border-radius: 20px;
+  border-bottom: 2px solid #ffdd59;
+  padding-top: 0;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   color: #fff;
   margin: 0;
 }
+
 .logo span { color: #ffdd59; }
 
 .btn-login-header {
@@ -64,6 +61,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 .btn-login-header:hover {
   background-color: #ffdd59;
   color: #000;
@@ -71,14 +69,14 @@ header {
 
 /* NAV */
 .nav-categorias {
-  margin-top: 15px;
-  border-top: 1px solid #ffffff1a;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 .nav-categorias ul {
   display: flex;
   gap: 20px;
-  padding: 15px 0;
+  padding: 12px 0;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -89,7 +87,6 @@ header {
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.2s;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +110,7 @@ header {
   cursor: default;
 }
 
-/* ✅ QUADRO PRINCIPAL (igual ao da PlayStation) */
+/* QUADRO PRINCIPAL */
 .quadro-principal {
   background-color: #2d2d2de6;
   border: 2px solid #ffdd59;
@@ -125,7 +122,7 @@ header {
   gap: 30px;
 }
 
-/* ✅ BARRA SUPERIOR DO QUADRO */
+/* BARRA SUPERIOR DO QUADRO */
 .filtros-bar {
   display: flex;
   justify-content: space-between;
@@ -174,27 +171,30 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   gap: 25px;
 }
 
-/* ✅ SCROLL VERTICAL (como na PlayStation) */
+/* SCROLL (vertical) */
 .scroll-jogos {
-  max-height: 500px;     /* ajusta 400/500/600 se quiseres */
+  max-height: 500px;   /* ajusta: 400/500/600 */
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
 }
 
-/* Scrollbar */
-.scroll-jogos::-webkit-scrollbar {
-  width: 8px;
-}
-.scroll-jogos::-webkit-scrollbar-track {
-  background: transparent;
-}
+/* Scrollbar (Chrome/Edge/Safari) */
+.scroll-jogos::-webkit-scrollbar { width: 8px; }
+.scroll-jogos::-webkit-scrollbar-track { background: transparent; }
 .scroll-jogos::-webkit-scrollbar-thumb {
   background-color: #ffdd59;
   border-radius: 10px;
 }
 
+/* Scrollbar (Firefox) */
+.scroll-jogos {
+  scrollbar-width: thin;
+  scrollbar-color: #ffdd59 transparent;
+}
+
 /* CARTÕES */
+.card-jogo,
 .jogo.card {
   background-color: #00000099;
   padding: 20px;
@@ -207,12 +207,14 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   flex-direction: column;
 }
 
+.card-jogo:hover,
 .jogo.card:hover {
   transform: translateY(-5px);
   border-color: #ffdd59;
 }
 
 /* Imagem */
+.card-jogo img,
 .card-img img {
   width: 100%;
   height: 180px;
@@ -222,12 +224,14 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
 }
 
 /* Títulos e preço */
+.card-jogo h3,
 .card-body h3 {
   margin: 10px 0;
   color: #ffdd59;
   font-size: 1.2rem;
 }
 
+.card-jogo p,
 .card-body p {
   color: #ccc;
   font-size: 0.95rem;
@@ -240,10 +244,47 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   flex-direction: column;
   flex: 1;
 }
+
 .card-body button {
   width: 100%;
   margin-top: auto;
 }
+
+/* MODAL (se usares) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: #000000cc;
+  padding: 20px;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom right, #2a2a2a, #1a1a1a);
+  border: 1px solid #ffdd59;
+  margin: 10% auto;
+  padding: 30px;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 15px;
+  color: #fff;
+  position: relative;
+}
+
+.fechar {
+  color: #aaa;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover { color: #ffdd59; }
+
+#modalTitulo { color: #ffdd59; margin-top: 0; }
 
 /* FOOTER */
 .footer {
@@ -304,7 +345,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   transform: translateX(5px);
 }
 
-/* Rodapé inferior */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 15px;
@@ -314,51 +354,12 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   color: #aaa;
 }
 
-/* RESPONSIVO */
 @media (max-width: 700px) {
   .logo { font-size: 1.6rem; }
   .container { padding: 15px; }
   .quadro-principal { padding: 20px; }
   .filtros-bar { padding: 15px; }
   .nav-categorias ul { gap: 10px; }
-
-  button, select { width: 100%; }
+  select, button { width: 100%; }
   .controles-wrapper { width: 100%; }
 }
-<<<<<<< HEAD
-=======
-/* Navbar */
-.nav-categorias ul {
-  display: flex;
-  gap: 20px;
-  padding: 15px 0;
-  flex-wrap: wrap;
-  align-items: center;              /* <— isto ajuda no alinhamento vertical */
-}
-
-.nav-categorias a {
-  color: #ddd;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.2s;
-
-  display: inline-flex;             /* <— chave: deixa de ser inline "baseline" */
-  align-items: center;              /* <— centra o texto verticalmente */
-  justify-content: center;
-  min-height: 36px;                 /* <— garante altura consistente */
-  line-height: 1;                   /* <— evita diferenças de baseline */
-}
-
-.nav-categorias a:hover {
-  color: #ffdd59;
-  background-color: rgba(255, 221, 89, 0.12);
-}
-
-/* Estado ativo */
-.nav-categorias a.active {
-  color: #000;
-  background-color: #ffdd59;
-}
-
->>>>>>> 417e0b95232bf0d5cd3ed8f8e862f5f47500675e

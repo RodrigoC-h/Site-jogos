@@ -5,13 +5,12 @@ body {
     margin: 0;
     min-height: 100vh;
 }
-
-/* Header */
 header {
-    background: linear-gradient(to right, #7b2cbf, #4d7cff);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    background: linear-gradient(to right, #1a1a1a, #111);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 2px solid #ffdd59;
 }
 
 .container-flex {
@@ -20,18 +19,15 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 12px 20px;   /* mais baixo */
 }
 
-/* GAMEFORGE */
 .logo {
     font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
 }
-.logo span {
-    color: #ffdd59;
-}
+.logo span { color: #ffdd59; }
 
 /* LOGIN */
 .btn-login-header {
@@ -44,8 +40,6 @@ header {
     font-size: 1rem;
     transition: 0.3s;
 }
-
-
 .btn-login-header:hover {
     background-color: #ffdd59;
     color: #000;
@@ -66,18 +60,10 @@ header {
     font-weight: bold;
     transition: 0.3s;
 }
-.nav-categorias a:hover {
-    color: #ffdd59;
-}
+.nav-categorias a:hover { color: #ffdd59; }
 
 a { text-decoration: none; }
 ul { list-style: none; padding: 0; margin: 0; }
-
-/* Linha branca */
-.linha-header {
-    height: 1px;
-    background-color: rgba(255,255,255,0.3);
-}
 
 /* Layout */
 .container {
@@ -105,6 +91,8 @@ ul { list-style: none; padding: 0; margin: 0; }
     background-color: #00000080;
     padding: 20px;
     border-radius: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .filtros-bar h2 {
@@ -112,12 +100,28 @@ ul { list-style: none; padding: 0; margin: 0; }
     color: #ffdd59;
 }
 
+.controles-wrapper{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Pesquisa + filtro */
 #pesquisaJogos {
     padding: 10px;
     border-radius: 6px;
     border: none;
     font-size: 16px;
     width: 220px;
+}
+
+#filtroGenero {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    width: 180px;
 }
 
 /* Grelha */
@@ -127,8 +131,21 @@ ul { list-style: none; padding: 0; margin: 0; }
     gap: 25px;
     max-height: 520px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 8px;
 }
+
+/* Scrollbar amarela */
+.grid-jogos::-webkit-scrollbar { width: 8px; }
+.grid-jogos::-webkit-scrollbar-track { background: transparent; }
+.grid-jogos::-webkit-scrollbar-thumb {
+    background-color: #ffdd59;
+    border-radius: 10px;
+}
+.grid-jogos { scrollbar-width: thin; scrollbar-color: #ffdd59 transparent; }
+
+/* ✅ classe para esconder cards sem rebentar o layout */
+.card-oculto { display: none !important; }
 
 .card-jogo {
     background-color: #00000099;
@@ -170,6 +187,12 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* ✅ isto garante que o botão "Ver detalhes" nunca encolhe */
+.card-jogo .btn-detalhes{
+    width: 100%;
+    margin-top: auto; /* empurra o botão para o fundo do card */
+}
+
 /* Modais */
 .modal {
     display: none;
@@ -178,8 +201,6 @@ button:hover {
     inset: 0;
     background-color: #000000cc;
 }
-
-/* Quando o modal estiver ativo */
 .modal.ativo {
     display: flex;
     align-items: center;
@@ -202,16 +223,13 @@ button:hover {
     gap: 20px;
 }
 
-#modalDetalhes .modal-content {
-    padding-bottom: 70px;
-}
+#modalDetalhes .modal-content { padding-bottom: 70px; }
 
 #btnFecharModal2 {
     position: absolute;
     bottom: 20px;
     left: 20px;
 }
-
 #btnComprar {
     position: absolute;
     bottom: 20px;
@@ -260,16 +278,13 @@ button:hover {
     gap: 40px;
 }
 
-.footer-col h3 span {
-    color: #ffdd59;
-}
+.footer-col h3 span { color: #ffdd59; }
 
 .footer-col h4 {
     color: #ffdd59;
     margin-bottom: 15px;
     text-align: right;
 }
-
 
 .social-links {
     display: flex;
@@ -284,11 +299,7 @@ button:hover {
     font-weight: bold;
     transition: 0.3s;
 }
-
-.social-links a:visited {
-    color: #ccc;
-}
-
+.social-links a:visited { color: #ccc; }
 .social-links a:hover {
     color: #ffdd59;
     transform: translateX(-5px);
@@ -303,16 +314,14 @@ button:hover {
     color: #aaa;
 }
 
-
-/* Corrigir apenas Login e Painel (não afeta o modal dos jogos) */
+/* Corrigir apenas Login e Painel */
 #loginModal .modal-content,
 #adminModal .modal-content {
     width: 90%;
     max-width: 600px;
-    overflow-x: hidden;   /* remove scroll horizontal */
+    overflow-x: hidden;
 }
 
-/* Garantir que inputs e botões nunca ultrapassam o modal */
 #loginModal input,
 #loginModal button,
 #adminModal input,
@@ -322,3 +331,11 @@ button:hover {
     max-width: 100%;
     box-sizing: border-box;
 }
+#filtroGenero {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
