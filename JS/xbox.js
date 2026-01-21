@@ -65,4 +65,67 @@ const catalogoJogos = [
     }
 
 ]
+const lista = document.getElementById("listaJogos");
+
+catalogoJogos.forEach(jogo => {
+    lista.innerHTML += `
+        <div style="margin-bottom:20px">
+            <h2>${jogo.titulo}</h2>
+            <p><strong>Género:</strong> ${jogo.genero || jogo.genereo}</p>
+            <p><strong>Ano:</strong> ${jogo.ano}</p>
+            <img src="${jogo.imagem}" width="200">
+            <p>${jogo.descricao}</p>
+            <hr>
+        </div>
+    `;
+});
+
+const modal = document.getElementById("modalDetalhes");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalGenero = document.getElementById("modalGenero");
+const modalDescricao = document.getElementById("modalDescricao");
+const modalAno = document.getElementById("modalAno");
+const btnFecharX = document.getElementById("btnFecharModal");
+const btnFechar = document.getElementById("btnFecharModal2");
+
+function abrirModal(id) {
+    let jogoSelecionado = null;
+
+    for (let i = 0; i < catalogoJogos.length; i++) {
+        if (catalogoJogos[i].id === id) {
+            jogoSelecionado = catalogoJogos[i];
+            break;
+        }
+    }
+
+    if (jogoSelecionado === null) {
+        return;
+    }
+
+    modalTitulo.textContent = jogoSelecionado.titulo;
+    modalGenero.textContent = "Género: " + jogoSelecionado.genero;
+    modalDescricao.textContent = jogoSelecionado.descricao;
+    modalAno.textContent = "Ano: " + jogoSelecionado.ano;
+    modal.style.display = "block";
+}
+
+const cards = document.querySelectorAll(".card-jogo");
+
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", function () {
+        const id = this.dataset.id;
+        abrirModal(id);
+    });
+}
+
+function fecharModal() {
+    modal.style.display = "none";
+}
+
+btnFecharX.addEventListener("click", fecharModal);
+btnFechar.addEventListener("click", fecharModal);
+
+modal.addEventListener("click", function (e) {
+    if (e.target === modal) fecharModal();
+});
 

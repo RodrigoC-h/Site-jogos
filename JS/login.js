@@ -1,24 +1,35 @@
-function login(event) {
+const utilizadores = [
+    { user: "admin", pass: "1234" },
+    { user: "user1", pass: "pass1" },
+    { user: "user2", pass: "pass2" }
+];
 
-  event.preventDefault();
-
-  const users = [
-    { username: "admin1", password: "1234" },
-    // { username: "user1", password: "pass1" },
-    // { username: "user2", password: "pass2" }
-  ];
-
-  const username = document.getElementById("user").value;
-  const password = document.getElementById("pass").value;
-
-  if (username == "admin1" && password == "1234") {
-    window.location.href = "index_pos_login.html";
-  // } else if (username == "user1" && password == "pass1" || username == "user2" && password == "pass2") {
-  //   window.location.href = "index.html";
-  } else {
-    alert("Utilizador ou password incorretos!");
-  }
-
-  
+function abrirLogin() {
+    document.getElementById("loginModal").classList.add("ativo");
 }
 
+function fecharLogin() {
+    document.getElementById("loginModal").classList.remove("ativo");
+
+    document.getElementById("user").value = "";
+    document.getElementById("pass").value = "";
+}
+
+
+function login() {
+    const u = document.getElementById("user").value.trim();
+    const p = document.getElementById("pass").value.trim();
+
+    const encontrado = utilizadores.find(el => el.user === u && el.pass === p);
+
+    if (!encontrado) {
+        alert("Credenciais inválidas.");
+        return;
+    }
+
+    fecharLogin();
+
+    if (encontrado.user === "admin") {
+        abrirAdmin();
+    }
+}

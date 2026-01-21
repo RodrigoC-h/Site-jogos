@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 /* xbox.css (com quadro + barra + scroll vertical) */
 
 /* Reset básico */
+=======
+>>>>>>> 417e0b95232bf0d5cd3ed8f8e862f5f47500675e
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
@@ -322,3 +325,40 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   button, select { width: 100%; }
   .controles-wrapper { width: 100%; }
 }
+<<<<<<< HEAD
+=======
+/* Navbar */
+.nav-categorias ul {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  align-items: center;              /* <— isto ajuda no alinhamento vertical */
+}
+
+.nav-categorias a {
+  color: #ddd;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+
+  display: inline-flex;             /* <— chave: deixa de ser inline "baseline" */
+  align-items: center;              /* <— centra o texto verticalmente */
+  justify-content: center;
+  min-height: 36px;                 /* <— garante altura consistente */
+  line-height: 1;                   /* <— evita diferenças de baseline */
+}
+
+.nav-categorias a:hover {
+  color: #ffdd59;
+  background-color: rgba(255, 221, 89, 0.12);
+}
+
+/* Estado ativo */
+.nav-categorias a.active {
+  color: #000;
+  background-color: #ffdd59;
+}
+
+>>>>>>> 417e0b95232bf0d5cd3ed8f8e862f5f47500675e

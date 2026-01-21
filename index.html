@@ -3,196 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore | Catálogo de Jogos</title>
+    <title>GameForge | Catálogo de Jogos</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-    <header>
-        <div class="header-main">
-            <div class="container-flex">
-                <a href="index.html" style="text-decoration: none;">
-                    <h1 class="logo">GAME<span>FORGE</span></h1>
-                </a>
-                <div class="header-right">
-                    <button class="btn-login-header" onclick="abrirLogin()">
-                         Login
-                    </button>
-                </div>
+
+<!-- Header -->
+<header>
+    <div class="container-flex">
+        <h1 class="logo">GAME<span>FORGE</span></h1>
+        <button class="btn-login-header" onclick="abrirLogin()">Login</button>
+    </div>
+
+    <!-- Barra de categorias -->
+    <nav class="nav-categorias">
+        <div class="container-flex">
+            <ul>
+                <li><a href="playstation.html">Playstation</a></li>
+                <li><a href="xbox.html">XBOX</a></li>
+                <li><a href="pc.html">PC</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Conteúdo Principal -->
+<main class="container">
+    <div class="quadro-principal">
+
+        <!-- Barra de filtros -->
+        <div class="filtros-bar">
+            <h2>Sugestões para ti</h2>
+            <div class="controles-wrapper">
+                <input type="text" id="pesquisaJogos" placeholder="Pesquisar jogo...">
             </div>
         </div>
-        <nav class="nav-categorias">
-            <div class="container-flex">
-                <ul>
-                    <li><a href="playstation.html">Playstation</a></li>
-                    <li><a href="xbox.html">XBOX</a></li>
-                    <li><a href="pc.html">PC</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <main class="container">
-        <div class="quadro-principal">
-            <div class="filtros-bar">
-                <h2>Catálogo de Jogos</h2>
+        <!-- Secção de sugestões -->
+        <section class="seccao-sugestoes">
+            <div class="grid-jogos" id="sugestoesJogos">
 
-                <div class="controles-wrapper">
-                    <input 
-                        type="text" 
-                        id="pesquisaJogos" 
-                        placeholder="Pesquisar jogos..."
-                    >
-
-                    <select id="filtroGenero">
-                        <option value="">Selecionar Género</option>
-                        <option value="rpg.html">RPG</option>
-                        <option value="acao.html">Ação</option>
-                        <option value="estrategia.html">Estratégia</option>
-                    </select>
-
-                    <button class="btn-goty" onclick="mudarParaGoty()">
-                        Vencedores GOTY
-                    </button>
+                <!-- Cartas de jogos -->
+                <div class="card-jogo" data-id="minecraft">
+                    <img src="IMG/Minecraft_img.jpeg" alt="Minecraft">
+                    <h3>Minecraft</h3>
+                    <button>Ver detalhes</button>
                 </div>
-            </div>
 
-            <div id="catalogo" class="grid-jogos"></div>
-
-            <div class="seccao-sugestoes">
-                <h3>Sugestões para ti</h3>
-                <div class="grid-jogos">
-
-                    <div class="card-jogo" data-id="minecraft">
-                        <img src="IMG/Minecraft_img.jpeg" alt="Minecraft">
-                        <h3>Minecraft</h3>
-                        <button type="button">Ver Detalhes</button>
-                    </div>
-
-                    <div class="card-jogo" data-id="red_redemption">
-                        <img src="IMG/RDD_2.jpeg" alt="Red Dead Redemption 2">
-                        <h3>Red Dead Redemption</h3>
-                        <button type="button">Ver Detalhes</button>
-                    </div>
-
-                    <div class="card-jogo" data-id="expedition_33">
-                        <img src="IMG/Clair_obscur_expedition_33_wallpaper.jpeg" alt="Expedition 33">
-                        <h3>Expedition 33</h3>
-                        <button type="button">Ver detalhes</button>
-                    </div>
-
-                    <div class="card-jogo" data-id="elden_ring">
-                        <img src="IMG/Elden_ring_img.jpeg" alt="Elden Ring">
-                        <h3>Elden Ring</h3>
-                        <button type="button">Ver detalhes</button>
-                    </div>
-
-                    <div class="card-jogo" data-id="The_witcher">
-                        <img src="IMG/Thewitcher.jpeg" alt="The Witcher">
-                        <h3>The Witcher</h3>
-                        <button type="button">Ver detalhes</button>
-                    </div>
-                     <div class="card-jogo" data-id="cyberpunk">
-                        <img src="IMG/cyberpunk.jpeg" alt="Cyberpunk 2077">
-                        <h3>Cyberpunk 2077</h3>
-                        <button type="button">Ver detalhes</button>
-                    </div>
-
+                <div class="card-jogo" data-id="red_redemption">
+                    <img src="IMG/RDD_2.jpeg" alt="Red Dead Redemption 2">
+                    <h3>Red Dead Redemption 2</h3>
+                    <button>Ver detalhes</button>
                 </div>
+
+                <div class="card-jogo" data-id="expedition_33">
+                    <img src="IMG/Clair_obscur_expedition_33_wallpaper.jpeg" alt="Claire Obscur: Expedition 33">
+                    <h3>Claire Obscur: Expedition 33</h3>
+                    <button>Ver detalhes</button>
+                </div>
+
+                <div class="card-jogo" data-id="elden_ring">
+                    <img src="IMG/Elden_ring_img.jpeg" alt="Elden Ring">
+                    <h3>Elden Ring</h3>
+                    <button>Ver detalhes</button>
+                </div>
+
+                <div class="card-jogo" data-id="The_witcher">
+                    <img src="IMG/Thewitcher.jpeg" alt="The Witcher">
+                    <h3>The Witcher</h3>
+                    <button>Ver detalhes</button>
+                </div>
+
+                <div class="card-jogo" data-id="cyberpunk">
+                    <img src="IMG/cyberpunk.jpeg" alt="Cyberpunk 2077">
+                    <h3>Cyberpunk 2077</h3>
+                    <button>Ver detalhes</button>
+                </div>
+
             </div>
-        </div>
-    </main>
-    <div id="modalDetalhes" class="modal">
+        </section>
+
+    </div>
+</main>
+
+<!-- Modal de Detalhes do Jogo -->
+<div id="modalDetalhes" class="modal">
     <div class="modal-content">
-    <h2 id="modalTitulo"></h2>
-    <p id="modalGenero"></p>
-    <p id="modalDescricao"></p>
-    <p id="modalAno"></p>
-    <button id="btnFecharModal2" type="button">Fechar</button>
-    <button id="btnComprar" class="btn-comprar-modal" type="button">
-        Comprar
-    </button>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalGenero"></p>
+        <p id="modalDescricao"></p>
+        <p id="modalAno"></p>
+
+        <button id="btnFecharModal2" onclick="fecharModal()">Fechar</button>
+        <button id="btnComprar">Comprar</button>
+    </div>
 </div>
-<<<<<<< HEAD
-    </div>    
-=======
+
+<!-- Modal de Login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h2>Login</h2>
+        <input type="text" id="user" placeholder="Utilizador">
+        <input type="password" id="pass" placeholder="Password">
+        <button onclick="login()">Entrar</button>
+        <button onclick="fecharLogin()">Cancelar</button>
     </div>
-<<<<<<< HEAD
+</div>
 
-    <!-- Modal de Login -->
-    <div id="loginModal" class="modal hidden">
-        <div class="modal-content">
-            <h2>Login</h2>
+<!-- Modal do Painel de Administração -->
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <h2>Painel de Administração</h2>
 
-            <input type="text" id="user" placeholder="Utilizador">
-            <input type="password" id="pass" placeholder="Password">
+        <!-- Adicionar jogo -->
+        <form id="formulario">
+            <label for="nomejogo">Nome do Jogo:</label>
+            <input type="text" id="nomejogo" required>
 
-            <button onclick="login()">Entrar</button>
-            <button onclick="fecharLogin()">Cancelar</button>
+            <label for="genero">Género:</label>
+            <select id="genero" required>
+                <option value="">Seleciona um género</option>
+                <option value="Ação">Ação</option>
+                <option value="Aventura">Aventura</option>
+                <option value="RPG">RPG</option>
+                <option value="Estratégia">Estratégia</option>
+                <option value="Simulação">Simulação</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" required></textarea>
+
+            <label for="avaliacao">Avaliação (0–5) ☆:</label>
+            <input type="number" id="avaliacao" min="0" max="5" required>
+
+            <label for="imagem">Imagem do Jogo (URL ou caminho):</label>
+            <input type="text" id="imagem" placeholder="Ex: IMG/meujogo.jpg" required>
+
+            <button type="submit">Guardar Jogo</button>
+        </form>
+
+        <hr>
+
+        <!-- Remover jogo -->
+        <div id="remover-jogo">
+            <label for="nomeRemover">Nome do jogo a remover:</label>
+            <input type="text" id="nomeRemover" placeholder="Ex: Minecraft">
+            <button type="button" onclick="removerJogo()">Remover Jogo</button>
         </div>
+
+        <p id="mensagem"></p>
+
+        <button type="button" onclick="fecharAdmin()">Fechar Painel</button>
     </div>
-    
-=======
-    
-<<<<<<< HEAD
->>>>>>> 1dbad7dd3d91380afaa59f624d157f337e7fd1f4
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>GAME<span>FORGE</span></h3>
-                <p>O teu catálogo de jogos. Explora, descobre e joga.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Segue-nos</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">Facebook</a>
-                    <a href="#" aria-label="Instagram">Instagram</a>
-                    <a href="#" aria-label="X">X</a>
-                    <a href="#" aria-label="YouTube">YouTube</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 GameForge — Todos os direitos reservados</p>
-        </div>
-    </footer>
->>>>>>> 3cf30c32a5982c18e37dfc2a62d3b1f2d032b9c5
-    <script src="JS/generos.js"></script>
-    <script src="JS/index.js"></script>
-</body>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+</div>
 
+<!-- Footer -->
 <footer class="footer">
-=======
-=======
->>>>>>> 59e62b29f20e9a535708c7c4c0897d78fd99efa0
->>>>>>> 1dbad7dd3d91380afaa59f624d157f337e7fd1f4
-    <script src="JS/generos.js"></script>
-    <script src="JS/index.js"></script>
-    <footer class="footer">
->>>>>>> 3cf30c32a5982c18e37dfc2a62d3b1f2d032b9c5
     <div class="footer-container">
         <div class="footer-col">
             <h3>GAME<span>FORGE</span></h3>
             <p>O teu catálogo de jogos. Explora, descobre e joga.</p>
         </div>
+
         <div class="footer-col">
             <h4>Segue-nos</h4>
             <div class="social-links">
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="Instagram">Instagram</a>
-                <a href="#" aria-label="X">X</a>
-                <a href="#" aria-label="YouTube">YouTube</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">YouTube</a>
             </div>
         </div>
     </div>
+
     <div class="footer-bottom">
         <p>© 2026 GameForge — Todos os direitos reservados</p>
     </div>
 </footer>
-<<<<<<< HEAD
+
+<script src="JS/index.js"></script>
+<script src="JS/login.js"></script>
+<script src="JS/admin.js"></script>
 </body>
-=======
->>>>>>> 1dbad7dd3d91380afaa59f624d157f337e7fd1f4
 </html>
