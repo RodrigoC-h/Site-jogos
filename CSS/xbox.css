@@ -1,3 +1,5 @@
+/* xbox.css (com quadro + barra + scroll vertical) */
+
 /* Reset básico */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -31,7 +33,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   flex-wrap: wrap;
 }
 
-/* HEADER (igual ao index: claro/transparente + cantos arredondados) */
+/* HEADER */
 header {
   background-color: #ffffff1a;
   padding-top: 15px;
@@ -45,7 +47,6 @@ header {
   color: #fff;
   margin: 0;
 }
-
 .logo span { color: #ffdd59; }
 
 .btn-login-header {
@@ -109,7 +110,7 @@ header {
   cursor: default;
 }
 
-/* QUADRO PRINCIPAL (igual ao index) */
+/* ✅ QUADRO PRINCIPAL (igual ao da PlayStation) */
 .quadro-principal {
   background-color: #2d2d2de6;
   border: 2px solid #ffdd59;
@@ -121,7 +122,7 @@ header {
   gap: 30px;
 }
 
-/* BARRA SUPERIOR DO QUADRO */
+/* ✅ BARRA SUPERIOR DO QUADRO */
 .filtros-bar {
   display: flex;
   justify-content: space-between;
@@ -170,10 +171,11 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   gap: 25px;
 }
 
-/* ✅ SCROLL (só onde metes class="scroll-jogos") */
+/* ✅ SCROLL VERTICAL (como na PlayStation) */
 .scroll-jogos {
-  max-height: 500px;      /* ajusta: 400/500/600 */
+  max-height: 500px;     /* ajusta 400/500/600 se quiseres */
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 10px;
 }
 
@@ -189,8 +191,7 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   border-radius: 10px;
 }
 
-/* CARTÕES (igual ao index) */
-.card-jogo,
+/* CARTÕES */
 .jogo.card {
   background-color: #00000099;
   padding: 20px;
@@ -203,14 +204,12 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   flex-direction: column;
 }
 
-.card-jogo:hover,
 .jogo.card:hover {
   transform: translateY(-5px);
   border-color: #ffdd59;
 }
 
 /* Imagem */
-.card-jogo img,
 .card-img img {
   width: 100%;
   height: 180px;
@@ -220,68 +219,30 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
 }
 
 /* Títulos e preço */
-.card-jogo h3,
 .card-body h3 {
   margin: 10px 0;
   color: #ffdd59;
   font-size: 1.2rem;
 }
 
-.card-jogo p,
 .card-body p {
   color: #ccc;
   font-size: 0.95rem;
   margin: 0 0 15px 0;
 }
 
-/* corpo do card (para o botão ficar sempre em baixo) */
+/* corpo do card (botão sempre em baixo) */
 .card-body {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-
 .card-body button {
   width: 100%;
   margin-top: auto;
 }
 
-/* MODAL (caso uses noutras páginas) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  inset: 0;
-  background-color: #000000cc;
-  padding: 20px;
-}
-
-.modal-content {
-  background: linear-gradient(to bottom right, #2a2a2a, #1a1a1a);
-  border: 1px solid #ffdd59;
-  margin: 10% auto;
-  padding: 30px;
-  width: 50%;
-  max-width: 600px;
-  border-radius: 15px;
-  color: #fff;
-  position: relative;
-}
-
-.fechar {
-  color: #aaa;
-  position: absolute;
-  right: 18px;
-  top: 12px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.fechar:hover { color: #ffdd59; }
-
-#modalTitulo { color: #ffdd59; margin-top: 0; }
-
-/* FOOTER (igual ao index) */
+/* FOOTER */
 .footer {
   margin-top: 40px;
   background: linear-gradient(to right, #1a1a1a, #111);
@@ -357,39 +318,7 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   .quadro-principal { padding: 20px; }
   .filtros-bar { padding: 15px; }
   .nav-categorias ul { gap: 10px; }
-  select, button { width: 100%; }
+
+  button, select { width: 100%; }
   .controles-wrapper { width: 100%; }
-}
-/* Navbar */
-.nav-categorias ul {
-  display: flex;
-  gap: 20px;
-  padding: 15px 0;
-  flex-wrap: wrap;
-  align-items: center;              /* <— isto ajuda no alinhamento vertical */
-}
-
-.nav-categorias a {
-  color: #ddd;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.2s;
-
-  display: inline-flex;             /* <— chave: deixa de ser inline "baseline" */
-  align-items: center;              /* <— centra o texto verticalmente */
-  justify-content: center;
-  min-height: 36px;                 /* <— garante altura consistente */
-  line-height: 1;                   /* <— evita diferenças de baseline */
-}
-
-.nav-categorias a:hover {
-  color: #ffdd59;
-  background-color: rgba(255, 221, 89, 0.12);
-}
-
-/* Estado ativo */
-.nav-categorias a.active {
-  color: #000;
-  background-color: #ffdd59;
 }
