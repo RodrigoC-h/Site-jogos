@@ -1,4 +1,3 @@
-/* Reset básico */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
@@ -146,7 +145,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Botões gerais */
 button, .btn-goty, .btn-comprar {
   background-color: #ffdd59;
   color: #000;
@@ -171,15 +169,13 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   gap: 25px;
 }
 
-/* SCROLL (vertical) */
 .scroll-jogos {
-  max-height: 500px;   /* ajusta: 400/500/600 */
+  max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
 }
 
-/* Scrollbar (Chrome/Edge/Safari) */
 .scroll-jogos::-webkit-scrollbar { width: 8px; }
 .scroll-jogos::-webkit-scrollbar-track { background: transparent; }
 .scroll-jogos::-webkit-scrollbar-thumb {
@@ -187,13 +183,11 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   border-radius: 10px;
 }
 
-/* Scrollbar (Firefox) */
 .scroll-jogos {
   scrollbar-width: thin;
   scrollbar-color: #ffdd59 transparent;
 }
 
-/* CARTÕES */
 .card-jogo,
 .jogo.card {
   background-color: #00000099;
@@ -213,7 +207,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   border-color: #ffdd59;
 }
 
-/* Imagem */
 .card-jogo img,
 .card-img img {
   width: 100%;
@@ -223,7 +216,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   margin-bottom: 15px;
 }
 
-/* Títulos e preço */
 .card-jogo h3,
 .card-body h3 {
   margin: 10px 0;
@@ -238,7 +230,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   margin: 0 0 15px 0;
 }
 
-/* corpo do card (botão sempre em baixo) */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -250,7 +241,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   margin-top: auto;
 }
 
-/* MODAL (se usares) */
 .modal {
   display: none;
   position: fixed;
@@ -405,5 +395,91 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
     max-width: 520px;
     margin: 8% auto;
     padding: 18px;
+  }
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0,0,0,0.65);
+  padding: 20px;
+}
+
+.modal.ativo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom right, #2a2a2a, #1a1a1a);
+  border: 1px solid #ffdd59;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 18px;
+  color: #fff;
+  position: relative;
+  padding: 30px 30px 85px; 
+  box-shadow: 0 10px 24px rgba(0,0,0,0.55);
+}
+
+
+#modalTitulo {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+#modalGenero,
+#modalDescricao,
+#modalAno {
+  margin: 0 0 14px 0;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+
+.modal-actions button {
+  width: auto !important;
+  min-width: 120px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: #ffdd59;
+  color: #000;
+  transition: 0.2s;
+}
+
+.modal-actions button:hover {
+  background-color: #ffd700;
+  transform: scale(1.02);
+}
+
+@media (max-width: 520px) {
+  .modal-content {
+    padding: 24px 24px 120px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100% !important;
   }
 }

@@ -7,159 +7,165 @@
   <link rel="stylesheet" href="CSS/pc.css">
 </head>
 <body>
-  <header>
-    <div class="header-main">
-      <div class="container-flex">
-        <a href="index.html" style="text-decoration:none;">
-          <h1 class="logo">GAME<span>FORGE</span></h1>
-        </a>
-        <div class="header-right">
-          <a href="login.html" class="btn-login-header">Login</a>
-        </div>
+
+<header>
+  <div class="header-main">
+    <div class="container-flex">
+      <a href="index.html" style="text-decoration:none;">
+        <h1 class="logo">GAME<span>FORGE</span></h1>
+      </a>
+
+      <div class="header-right">
+        <a href="login.html" class="btn-login-header">Login</a>
       </div>
     </div>
+  </div>
 
-    <nav class="nav-categorias">
-      <div class="container">
-        <ul>
-          <li><a href="playstation.html">Playstation</a></li>
-          <li><a href="xbox.html">XBOX</a></li>
-          <li><a href="pc.html" class="active">PC</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main class="container">
-    <div class="quadro-principal">
-
-      <div class="filtros-bar">
-        <h2>Catálogo PC</h2>
-        <div class="controles-wrapper">
-          <a href="index.html" class="btn-login-header">Voltar ao Catálogo</a>
-        </div>
-      </div>
-      <div class="grid-jogos scroll-jogos">
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg" alt="Dota 2">
-          </div>
-          <div class="card-body">
-            <h3>Dota 2</h3>
-            <p>Grátis</p>
-            <button class="btn-comprar">Instalar</button>
-          </div>
-        </div>
-
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg" alt="Rust">
-          </div>
-          <div class="card-body">
-            <h3>Rust</h3>
-            <p>39,99€</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
-        </div>
-
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg" alt="Counter-Strike 2">
-          </div>
-          <div class="card-body">
-            <h3>Counter-Strike 2</h3>
-            <p>Grátis</p>
-            <button class="btn-comprar">Instalar</button>
-          </div>
-        </div>
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg" alt="Red Dead Redemption 2">
-          </div>
-          <div class="card-body">
-            <h3>Red Dead Redemption 2</h3>
-            <p>59,99€</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
-        </div>
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg" alt="Destiny 2">
-          </div>
-          <div class="card-body">
-            <h3>Destiny 2</h3>
-            <p>Grátis</p>
-            <button class="btn-comprar">Instalar</button>
-          </div>
-        </div>
-<div class="jogo card">
-    <div class="card-img">
-        <img src="https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/db7d-microsoft_flight_simulator_(2020).jpeg.webp" alt="Microsoft Flight Simulator">
+  <nav class="nav-categorias">
+    <div class="container">
+      <ul>
+        <li><a href="playstation.html">Playstation</a></li>
+        <li><a href="xbox.html">XBOX</a></li>
+        <li><a href="pc.html" class="active">PC</a></li>
+      </ul>
     </div>
-    <div class="card-body">
-        <h3>Microsoft Flight Simulator</h3>
-        <p>69,99€</p>
-        <button class="btn-comprar">Comprar</button>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="quadro-principal">
+
+    <div class="filtros-bar">
+      <h2>Catálogo PC</h2>
+      <div class="controles-wrapper">
+        <a href="index.html" class="btn-login-header">Voltar ao Catálogo</a>
+      </div>
     </div>
+    <div class="grid-jogos scroll-jogos">
+      <div class="jogo card" data-id="dota2">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg" alt="Dota 2">
+        </div>
+        <div class="card-body">
+          <h3>Dota 2</h3>
+          <p>Grátis</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="rust">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg" alt="Rust">
+        </div>
+        <div class="card-body">
+          <h3>Rust</h3>
+          <p>39,99€</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="cs2">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg" alt="Counter-Strike 2">
+        </div>
+        <div class="card-body">
+          <h3>Counter-Strike 2</h3>
+          <p>Grátis</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="rdr2">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg" alt="Red Dead Redemption 2">
+        </div>
+        <div class="card-body">
+          <h3>Red Dead Redemption 2</h3>
+          <p>59,99€</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="destiny2">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg" alt="Destiny 2">
+        </div>
+        <div class="card-body">
+          <h3>Destiny 2</h3>
+          <p>Grátis</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="war_thunder">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/236390/header.jpg" alt="War Thunder">
+        </div>
+        <div class="card-body">
+          <h3>War Thunder</h3>
+          <p>Grátis</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="flight_simulator">
+        <div class="card-img">
+          <img src="https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/db7d-microsoft_flight_simulator_(2020).jpeg.webp" alt="Microsoft Flight Simulator">
+        </div>
+        <div class="card-body">
+          <h3>Microsoft Flight Simulator</h3>
+          <p>69,99€</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+      <div class="jogo card" data-id="elden_ring">
+        <div class="card-img">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring">
+        </div>
+        <div class="card-body">
+          <h3>Elden Ring</h3>
+          <p>59,99€</p>
+          <button class="btn-detalhes" type="button">Ver detalhes</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+<div id="modalDetalhes" class="modal">
+  <div class="modal-content">
+    <h2 id="modalTitulo"></h2>
+    <p id="modalGenero"></p>
+    <p id="modalDescricao"></p>
+    <p id="modalAno"></p>
+
+    <button id="btnFecharModal2" type="button">Fechar</button>
+    <button id="btnComprar" type="button">Comprar</button>
+  </div>
 </div>
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/236390/header.jpg" alt="War Thunder">
-          </div>
-          <div class="card-body">
-            <h3>War Thunder</h3>
-            <p>Grátis</p>
-            <button class="btn-comprar">Instalar</button>
-          </div>
-        </div>
 
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172620/header.jpg" alt="Microsoft Flight Simulator">
-          </div>
-          <div class="card-body">
-            <h3>Microsoft Flight Simulator</h3>
-            <p>69,99€</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
-        </div>
+<script src="JS/pc.js"></script>
 
-        <div class="jogo card">
-          <div class="card-img">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring">
-          </div>
-          <div class="card-body">
-            <h3>Elden Ring</h3>
-            <p>59,99€</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
-        </div>
-
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>GAME<span>FORGE</span></h3>
+      <p>O teu catálogo de jogos. Explora, descobre e joga.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Segue-nos</h4>
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
       </div>
     </div>
-  </main>
-
-  <script src="JS/pc.js"></script>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>GAME<span>FORGE</span></h3>
-        <p>O teu catálogo de jogos. Explora, descobre e joga.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Segue-nos</h4>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="X">X</a>
-          <a href="#" aria-label="YouTube">YouTube</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 GameForge — Todos os direitos reservados</p>
-    </div>
-  </footer>
-
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 GameForge — Todos os direitos reservados</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -93,9 +93,7 @@ function fecharModal() {
     document.getElementById("modalDetalhes").classList.remove("ativo");
 }
 
-// ---------------------------
-// PESQUISA + FILTRO GÉNERO
-// ---------------------------
+
 const inputPesquisa = document.getElementById("pesquisaJogos");
 const filtroGenero = document.getElementById("filtroGenero");
 
@@ -107,14 +105,12 @@ function aplicarFiltros() {
         const id = card.dataset.id;
         const jogo = catalogoJogos.find(j => j.id === id);
 
-        // fallback seguro
         const titulo = (jogo ? jogo.titulo : card.querySelector("h3")?.textContent || "").toLowerCase();
         const genero = (jogo ? jogo.genero : "").toLowerCase();
 
         const okTitulo = titulo.includes(termo);
         const okGenero = (generoSel === "todos") ? true : genero.includes(generoSel);
 
-        // ✅ mantém layout (cards são flex)
         card.style.display = (okTitulo && okGenero) ? "flex" : "none";
     });
 }
@@ -122,12 +118,8 @@ function aplicarFiltros() {
 if (inputPesquisa) inputPesquisa.addEventListener("input", aplicarFiltros);
 if (filtroGenero) filtroGenero.addEventListener("change", aplicarFiltros);
 
-// Aplica logo no arranque (caso haja valor predefinido)
 aplicarFiltros();
 
-// ---------------------------
-// COMPRAR
-// ---------------------------
 const btnComprar = document.getElementById("btnComprar");
 if (btnComprar) {
     btnComprar.addEventListener("click", function () {

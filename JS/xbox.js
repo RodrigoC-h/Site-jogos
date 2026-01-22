@@ -1,131 +1,122 @@
+let jogoAtual = null;
+
 const catalogoJogos = [
-    {
-        id: "halo-infinite",
-        titulo: "Halo Infinite",
-        genero: "Tiro em primeira pessoa",
-        descricao: "Halo Infinite é um jogo de tiro em primeira pessoa que continua a saga do Master Chief, oferecendo uma experiência épica de combate contra forças alienígenas em um vasto mundo aberto.",
-        ano: 2021,
-        imagem: "IMG/Halo Infinite - art book cover, sparth.jpg",
-    },
-    {
-        id: "g5",
-        titulo: "Gears 5",
-        genero: "Ação",
-        descricao: "Gears 5 é um jogo de ação em terceira pessoa que segue a história de Kait Diaz enquanto ela luta contra uma ameaça alienígena conhecida como Swarm, oferecendo intensas batalhas e uma narrativa envolvente.",
-        ano: 2019,
-        imagem: "IMG/The Best Video Game the Year You Were Born.jpg"
-    },
-    {
-        id: "forza-horizon-5",
-        titulo: "Forza Horizon 5",
-        genero: "Corrida",
-        descricao: "Forza Horizon 5 é um jogo de corrida em mundo aberto ambientado no México, oferecendo uma vasta seleção de carros e eventos emocionantes para os entusiastas de automobilismo.",
-        ano: 2021,
-        imagem: "IMG/Forza Horizon 5 - Requisitos, preços e novidades.jpg"
-    },
-    {
-        id: "sea-of-thieves",
-        titulo: "Sea of Thieves",
-        genero: "Aventura",
-        descricao: "Sea of Thieves é um jogo de aventura multiplayer onde os jogadores assumem o papel de piratas em um mundo aberto, explorando ilhas, buscando tesouros e enfrentando outros jogadores em batalhas navais.",
-        ano: 2018,
-        imagem: "IMG/Sea Of Thieves Wallpapers.jpg"
-    },
-    {
-        id: "hellblade2",
-        titulo: "Hellblade II: Senua's Saga",
-        genero: "Ação/Aventura",
-        descricao: "Hellblade II: Senua's Saga é a sequência do aclamado jogo de ação e aventura, onde os jogadores acompanham a jornada de Senua enquanto ela enfrenta desafios psicológicos e mitológicos em um mundo sombrio e atmosférico.",
-        ano: 2024,
-        imagem: "IMG/Hellblade 2’s Alternate Narrators Are A Huge Wasted Story Opportunity.jpg"
-    },
-    {
-        id: "fable",
-        titulo: "Fable",
-        genero: "RPG",
-        descricao: "Fable é um jogo de RPG ambientado em um mundo de fantasia onde as escolhas dos jogadores moldam a história e o destino do personagem, oferecendo uma experiência rica em narrativa e exploração.",
-        ano: 2026,
-        imagem: "IMG/Fable game wallpaper.JPG"
-    },
-    {
-        id: "state of decay 2",
-        titulo: "State of Decay 2",
-        genero: "Terror/Sobrevivência",
-        descricao: "State of Decay 2 é a próxima edição da série de jogos de sobrevivência zumbi, onde os jogadores devem construir comunidades, gerenciar recursos e enfrentar hordas de mortos-vivos em um mundo pós-apocalíptico.",
-        ano: 2018,
-        imagem: "IMG/State of Decay 2 Free Download For PC.jpg",
-    },
-    {
-        id: "starfield",
-        titulo: "Starfield",
-        genero: "RPG/Ciência-Ficção",
-        descricao: "Starfield é um RPG de ficção científica ambientado em um vasto universo aberto, onde os jogadores exploram planetas, constroem naves espaciais e embarcam em missões épicas enquanto desvendam os mistérios do cosmos.",
-        ano: 2023,
-        imagem: "IMG/Starfield 4K Wallpaper.jpg"
-    }
+  {
+    id: "halo_infinite",
+    titulo: "Halo Infinite",
+    genero: "FPS",
+    descricao: `Regressa ao universo clássico de Halo numa nova aventura épica.
 
-]
-const lista = document.getElementById("listaJogos");
+Explora um vasto mundo aberto, enfrenta os Banished e descobre o destino do Master Chief numa campanha intensa, acompanhada de modos multijogador dinâmicos.`,
+    ano: 2021
+  },
+  {
+    id: "gears5",
+    titulo: "Gears 5",
+    genero: "Ação",
+    descricao: `Uma campanha cinematográfica com personagens carismáticas e batalhas brutais.
 
-catalogoJogos.forEach(jogo => {
-    lista.innerHTML += `
-        <div style="margin-bottom:20px">
-            <h2>${jogo.titulo}</h2>
-            <p><strong>Género:</strong> ${jogo.genero || jogo.genereo}</p>
-            <p><strong>Ano:</strong> ${jogo.ano}</p>
-            <img src="${jogo.imagem}" width="200">
-            <p>${jogo.descricao}</p>
-            <hr>
-        </div>
-    `;
-});
+Joga sozinho ou em cooperação e descobre segredos do universo Gears enquanto enfrentas hordas de inimigos.`,
+    ano: 2019
+  },
+  {
+    id: "forza_horizon5",
+    titulo: "Forza Horizon 5",
+    genero: "Corridas",
+    descricao: `Explora um enorme mundo aberto no México com dezenas de ambientes diferentes.
 
-const modal = document.getElementById("modalDetalhes");
-const modalTitulo = document.getElementById("modalTitulo");
-const modalGenero = document.getElementById("modalGenero");
-const modalDescricao = document.getElementById("modalDescricao");
-const modalAno = document.getElementById("modalAno");
-const btnFecharX = document.getElementById("btnFecharModal");
-const btnFechar = document.getElementById("btnFecharModal2");
+Participa em corridas arcade, eventos especiais e desafios enquanto conduzes centenas de carros icónicos.`,
+    ano: 2021
+  },
+  {
+    id: "sea_of_thieves",
+    titulo: "Sea of Thieves",
+    genero: "Aventura",
+    descricao: `Vive a fantasia de ser um verdadeiro pirata em alto mar.
 
-function abrirModal(id) {
-    let jogoSelecionado = null;
+Explora ilhas misteriosas, procura tesouros escondidos, combate outros jogadores e cria a tua própria lenda.`,
+    ano: 2018
+  },
+  {
+    id: "hellblade2",
+    titulo: "Hellblade II",
+    genero: "Aventura",
+    descricao: `Uma experiência narrativa intensa focada na mente e nas emoções da protagonista.
 
-    for (let i = 0; i < catalogoJogos.length; i++) {
-        if (catalogoJogos[i].id === id) {
-            jogoSelecionado = catalogoJogos[i];
-            break;
-        }
-    }
+Com gráficos realistas e uma atmosfera única, esta sequela aprofunda o universo sombrio de Senua.`,
+    ano: 2024
+  },
+  {
+    id: "fable",
+    titulo: "Fable",
+    genero: "RPG / Aventura",
+    descricao: `Explora um mundo fantástico cheio de humor, escolhas morais e personagens memoráveis.
 
-    if (jogoSelecionado === null) {
-        return;
-    }
+As tuas decisões moldam o herói que te tornas e alteram o mundo à tua volta.`,
+    ano: 2004
+  },
+  {
+    id: "state_of_decay3",
+    titulo: "State of Decay 3",
+    genero: "Sobrevivência",
+    descricao: `Sobrevive num mundo devastado por zombies enquanto geres uma comunidade de sobreviventes.
 
-    modalTitulo.textContent = jogoSelecionado.titulo;
-    modalGenero.textContent = "Género: " + jogoSelecionado.genero;
-    modalDescricao.textContent = jogoSelecionado.descricao;
-    modalAno.textContent = "Ano: " + jogoSelecionado.ano;
-    modal.style.display = "block";
-}
+Recolhe recursos, constrói bases e toma decisões difíceis para manter o grupo vivo.`,
+    ano: 2025
+  },
+  {
+    id: "starfield",
+    titulo: "Starfield",
+    genero: "RPG",
+    descricao: `Explora o espaço numa aventura épica da Bethesda.
 
-const cards = document.querySelectorAll(".card-jogo");
+Viaja entre planetas, completa missões, junta-te a facções e cria o teu próprio caminho numa galáxia cheia de mistérios.`,
+    ano: 2023
+  }
+];
 
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", function () {
-        const id = this.dataset.id;
-        abrirModal(id);
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modalDetalhes");
+  const modalTitulo = document.getElementById("modalTitulo");
+  const modalGenero = document.getElementById("modalGenero");
+  const modalDescricao = document.getElementById("modalDescricao");
+  const modalAno = document.getElementById("modalAno");
+  const btnFechar = document.getElementById("btnFecharModal2");
+  const btnComprar = document.getElementById("btnComprar");
+
+  function abrirModal(id) {
+    const jogo = catalogoJogos.find(j => j.id === id);
+    if (!jogo) return;
+
+    jogoAtual = jogo;
+
+    modalTitulo.textContent = jogo.titulo;
+    modalGenero.textContent = "Género: " + jogo.genero;
+    modalDescricao.textContent = jogo.descricao;
+    modalAno.textContent = "Ano: " + jogo.ano;
+
+    modal.classList.add("ativo");
+  }
+
+  function fecharModal() {
+    modal.classList.remove("ativo");
+  }
+
+  document.querySelectorAll(".btn-detalhes").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".jogo.card");
+      const id = card?.dataset?.id;
+      if (id) abrirModal(id);
     });
-}
+  });
 
-function fecharModal() {
-    modal.style.display = "none";
-}
+  btnFechar.addEventListener("click", fecharModal);
 
-btnFecharX.addEventListener("click", fecharModal);
-btnFechar.addEventListener("click", fecharModal);
-
-modal.addEventListener("click", function (e) {
+  modal.addEventListener("click", (e) => {
     if (e.target === modal) fecharModal();
-});
+  });
 
+  btnComprar.addEventListener("click", () => {
+    if (jogoAtual) alert("Comprado: " + jogoAtual.titulo);
+  });
+});
