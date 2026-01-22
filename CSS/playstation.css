@@ -355,7 +355,6 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   color: #aaa;
 }
 
-/* RESPONSIVO */
 @media (max-width: 700px) {
   .logo { font-size: 1.6rem; }
   .container { padding: 15px; }
@@ -364,4 +363,48 @@ button:hover, .btn-goty:hover, .btn-comprar:hover {
   .nav-categorias ul { gap: 10px; }
   select, button { width: 100%; }
   .controles-wrapper { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  .container { padding: 16px; }
+  .quadro-principal { padding: 22px; border-radius: 20px; }
+  .filtros-bar { padding: 16px; }
+  .grid-jogos { gap: 18px; }
+  .card-jogo img, .card-img img { height: 170px; }
+}
+
+@media (max-width: 700px) {
+  header { border-radius: 16px; }
+  .container-flex { padding: 10px 16px; }
+  .logo { font-size: 1.6rem; }
+
+  .nav-categorias ul { gap: 10px; padding: 10px 0; }
+  .nav-categorias a { padding: 8px 10px; min-height: 34px; }
+
+  .quadro-principal { padding: 18px; border-radius: 18px; }
+  .filtros-bar { padding: 14px; }
+
+  .controles-wrapper { width: 100%; }
+  .controles-wrapper > * { width: 100%; }
+
+  .grid-jogos { grid-template-columns: 1fr; }
+  .card-jogo img, .card-img img { height: 180px; }
+
+  .scroll-jogos { max-height: 62vh; }
+}
+
+@media (max-width: 420px) {
+  .logo { font-size: 1.45rem; }
+  button, .btn-goty, .btn-comprar { padding: 11px 14px; }
+  .card-jogo img, .card-img img { height: 160px; }
+  .nav-categorias a { min-height: 32px; }
+}
+
+@media (max-width: 700px) {
+  .modal-content {
+    width: 95%;
+    max-width: 520px;
+    margin: 8% auto;
+    padding: 18px;
+  }
 }
